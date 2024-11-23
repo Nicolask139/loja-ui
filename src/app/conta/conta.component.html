@@ -1,0 +1,19 @@
+<div class="palco">
+    <div>
+        <h1>Criar nova conta:</h1>
+
+        <form (ngSubmit)="criarUsuario()">
+            <input type="text" placeholder="Nome" [(ngModel)]="usuario.nome" name="nome" required />
+            <input type="text" placeholder="Apelido" [(ngModel)]="usuario.apelido" name="apelido" />
+            <input type="email" placeholder="Email" [(ngModel)]="usuario.email" name="email" required />
+            <input type="password" placeholder="Senha" [(ngModel)]="usuario.senha" name="senha" required />
+            <input type="date" placeholder="Data de Nascimento" [(ngModel)]="usuario.dataNascimento" name="dataNascimento" />
+            <input type="text" placeholder="CPF" [(ngModel)]="usuario.cpf" name="cpf" required />
+            <input type="tel" placeholder="Telefone" [(ngModel)]="usuario.telefone" name="telefone" />
+            <button type="submit">Criar</button>
+          </form>
+
+    </div>
+</div>
+
+<router-outlet></router-outlet>
