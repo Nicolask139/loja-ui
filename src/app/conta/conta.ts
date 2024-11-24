@@ -3,7 +3,7 @@ export interface Usuario {
     apelido: string;
     email: string;
     senha: string;
-    dataNascimento: string;
+    dataNascimento: String;
     cpf: string;
     telefone: string;
   }
