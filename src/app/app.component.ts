@@ -5,7 +5,6 @@ import { ContaComponent } from "./conta/conta.component";
 import { RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { ContaService } from './conta/conta.service';
 
 
 @Component({
