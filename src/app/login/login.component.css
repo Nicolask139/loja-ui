@@ -20,17 +20,8 @@
     }
 }
 
-input{
-    color: white;
-    background-color: transparent;
-    border-color: white;
-    width: 250px;
-    height: 40px;
-    border-radius: 8px;
-}
-
 label{
-    color: white;
+    color: black;
 }
 
 h1{

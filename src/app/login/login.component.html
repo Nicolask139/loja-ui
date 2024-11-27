@@ -2,16 +2,21 @@
 <div class="palco">  
     <div class="centro">       
         <h1>Login</h1>
+
         <p-floatLabel>
-            <input pInputText id="email" [(ngModel)]="email" name="email" required />
-            <label for="email">Email</label>
+            <input pInputText placeholder="voce@gmail.com" id="email"[(ngModel)]="email" name="email" required />
+            <label>E-mail</label>
         </p-floatLabel>
+
         <br><br>
+
         <p-floatLabel>
-            <input pInputText id="senha" [(ngModel)]="senha" name="senha" required />
+            <input pInputText type="password" id="senha" [(ngModel)]="senha" name="senha" required />
             <label for="senha">Senha</label>
         </p-floatLabel>
+
         <br><br>
+        
         <p>Não possui uma conta? <a href="/conta">Crie uma!!</a></p>
         <form (ngSubmit)="realizarLogin()">
                 <button type="submit">Entrar</button>

@@ -9,11 +9,13 @@ import { ToastModule } from 'primeng/toast';
 import { RippleModule } from 'primeng/ripple';
 import { InputMaskModule } from 'primeng/inputmask';
 import { FormsModule, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { PasswordModule } from 'primeng/password';
+import { DividerModule } from 'primeng/divider';
 
 @Component({
   selector: 'app-conta',
   standalone: true,
-  imports: [ReactiveFormsModule, InputMaskModule, RippleModule, ToastModule, ButtonModule, RouterOutlet, FormsModule, InputTextModule, FloatLabelModule],
+  imports: [PasswordModule, DividerModule, ReactiveFormsModule, InputMaskModule, RippleModule, ToastModule, ButtonModule, RouterOutlet, FormsModule, InputTextModule, FloatLabelModule],
   templateUrl: './conta.component.html',
   styleUrl: './conta.component.css'
 })

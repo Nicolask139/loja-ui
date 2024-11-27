@@ -1,3 +1,4 @@
+
 .palco{
     display: flex;
     height: 100vh;
@@ -20,17 +21,8 @@
     }
 }
 
-input{
-    color: white;
-    background-color: transparent;
-    border-color: white;
-    width: 250px;
-    height: 40px;
-}
-
-
 label{
-    color: white;
+    color: black;
 }
 
 h1{
@@ -81,7 +73,3 @@ button{
   .p-toast-info {
     background-color: #2196f3 !important;
   }
-
-  
-
-
