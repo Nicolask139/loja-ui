@@ -1,44 +1,48 @@
+<p-toast position="top-right" [hideTransitionOptions]="'1000ms'" ></p-toast> 
 <div class="palco">  
     <div class="centro">       
         <h1>Criar usuario</h1>
+
         <p-floatLabel>
             <input pInputText id="username" [(ngModel)]="usuario.nome" name="nome" required />
-            <label for="username">Nome</label>
+            <label>Nome</label>
         </p-floatLabel>
         <br><br>
         <p-floatLabel>
             <input pInputText id="username" [(ngModel)]="usuario.apelido" name="apelido" required />
-            <label for="username">Apelido</label>
+            <label>Apelido</label>
         </p-floatLabel>
         <br><br>
         <p-floatLabel>
             <input pInputText id="username"[(ngModel)]="usuario.email" name="email" required />
-            <label for="username">E-mail</label>
+            <label>E-mail</label>
         </p-floatLabel>
         <br><br>
         <p-floatLabel>
-            <input pInputText id="username" [(ngModel)]="usuario.dataNascimento" name="dataNascimento" required />
-            <label for="username">Data de nascimento</label>
+            <input pInputText id="username"[(ngModel)]="usuario.dataNascimento" name="dataNascimento" required />
+            <label>Data de nascimento</label>
         </p-floatLabel>
         <br><br>
         <p-floatLabel>
             <input pInputText id="username" [(ngModel)]="usuario.cpf" name="cpf" required />
-            <label for="username">CPF</label>
+            <label>CPF</label>
         </p-floatLabel>
         <br><br>
         <p-floatLabel>
             <input pInputText id="username" [(ngModel)]="usuario.telefone" name="telefone" required />
-            <label for="username">Telefone</label>
+            <label>Telefone</label>
         </p-floatLabel>
         <br><br>
         <p-floatLabel>
             <input pInputText id="username" [(ngModel)]="usuario.senha" name="senha" required />
-            <label for="username">Senha</label>
+            <label>Senha</label>
         </p-floatLabel>
         <br><br>
         <form (ngSubmit)="criarUsuario()">
                 <button type="submit">Criar</button>
         </form>
+
+  
     </div>
 </div>
 

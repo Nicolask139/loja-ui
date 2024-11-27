@@ -28,6 +28,7 @@ input{
     height: 40px;
 }
 
+
 label{
     color: white;
 }
@@ -38,7 +39,6 @@ h1{
 }
 
 .centro{
-
     width: 500px;
     height: auto;
     border: 2px solid rgb(255, 255, 255);
@@ -65,6 +65,22 @@ button{
  button:hover{
     background-color: #7ad4f8; 
  }
+
+ .p-toast {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .p-toast-success {
+    background-color: #4caf50 !important;
+  }
+  
+  .p-toast-error {
+    background-color: #f44336 !important;
+  }
+  
+  .p-toast-info {
+    background-color: #2196f3 !important;
+  }
 
   
 

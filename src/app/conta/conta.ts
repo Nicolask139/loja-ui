@@ -1,10 +1,10 @@
 export interface Usuario {
-    nome: string;
-    apelido: string;
-    email: string;
-    senha: string;
-    dataNascimento: String;
-    cpf: string;
-    telefone: string;
+    nome: string ;
+    apelido: string ;
+    email: string ;
+    senha: string ;
+    dataNascimento: string;
+    cpf: string ;
+    telefone: string ;
   }
   

@@ -1,22 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ContaService } from './conta.service';
-import { FormsModule } from '@angular/forms';
 import { Usuario } from './conta';
 import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { ButtonModule } from 'primeng/button';
-
+import { ToastModule } from 'primeng/toast';
+import { RippleModule } from 'primeng/ripple';
+import { InputMaskModule } from 'primeng/inputmask';
+import { FormsModule, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-conta',
   standalone: true,
-  imports: [ButtonModule, RouterOutlet, FormsModule, InputTextModule, FloatLabelModule],
+  imports: [ReactiveFormsModule, InputMaskModule, RippleModule, ToastModule, ButtonModule, RouterOutlet, FormsModule, InputTextModule, FloatLabelModule],
   templateUrl: './conta.component.html',
   styleUrl: './conta.component.css'
 })
 
-export class ContaComponent {
+export class ContaComponent{
   usuario: Usuario = {
     nome: '',
     apelido: '',
@@ -27,11 +29,16 @@ export class ContaComponent {
     telefone: '',
   };
 
-  constructor(private contaService: ContaService) {}
+
+  constructor(
+    private contaService: ContaService
+  ) {}
 
   criarUsuario() {
     this.contaService.criarUsuario(this.usuario);
+
   }
 }
+
 
   

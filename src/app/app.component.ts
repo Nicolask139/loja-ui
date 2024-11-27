@@ -6,7 +6,6 @@ import { RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
-
 @Component({
   selector: 'app-root',
   standalone: true,
