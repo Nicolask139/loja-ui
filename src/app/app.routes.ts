@@ -12,5 +12,10 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./conta/conta.component').then((m) => m.ContaComponent),
       },
+      {
+        path: 'loja', 
+        loadComponent: () =>
+          import('./loja/loja.component').then((m) => m.LojaComponent),
+      },
       { path: '**', redirectTo: '' }, 
     ];

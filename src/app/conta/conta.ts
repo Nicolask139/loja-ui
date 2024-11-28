@@ -7,4 +7,4 @@ export interface Usuario {
     cpf: string ;
     telefone: string ;
   }
-  
+                             

@@ -5,11 +5,12 @@ import { ContaComponent } from "./conta/conta.component";
 import { RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { LojaComponent } from './loja/loja.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LoginComponent, ContaComponent, CommonModule, RouterLink, RouterLinkActive],
+  imports: [LojaComponent, RouterOutlet, LoginComponent, ContaComponent, CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
