@@ -11,11 +11,12 @@ import { InputMaskModule } from 'primeng/inputmask';
 import { FormsModule, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { PasswordModule } from 'primeng/password';
 import { DividerModule } from 'primeng/divider';
+import { CardModule } from 'primeng/card';
 
 @Component({
   selector: 'app-conta',
   standalone: true,
-  imports: [PasswordModule, DividerModule, ReactiveFormsModule, InputMaskModule, RippleModule, ToastModule, ButtonModule, RouterOutlet, FormsModule, InputTextModule, FloatLabelModule],
+  imports: [CardModule, PasswordModule, DividerModule, ReactiveFormsModule, InputMaskModule, RippleModule, ToastModule, ButtonModule, RouterOutlet, FormsModule, InputTextModule, FloatLabelModule],
   templateUrl: './conta.component.html',
   styleUrl: './conta.component.css'
 })

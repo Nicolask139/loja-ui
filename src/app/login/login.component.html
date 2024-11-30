@@ -1,7 +1,7 @@
 <p-toast position="top-right" [hideTransitionOptions]="'1000ms'" ></p-toast> 
 <div class="palco">  
     <div class="centro">       
-        <h1>Login</h1>
+        <h1 style="color: black;">Login</h1>
 
         <p-floatLabel>
             <input pInputText placeholder="voce@gmail.com" id="email"[(ngModel)]="email" name="email" required />
@@ -17,7 +17,7 @@
 
         <br><br>
         
-        <p>Não possui uma conta? <a href="/conta">Crie uma!!</a></p>
+        <p style="color: black;">Não possui uma conta? <a href="/conta">Crie uma!!</a></p>
         <form (ngSubmit)="realizarLogin()">
                 <button type="submit">Entrar</button>
         </form>
