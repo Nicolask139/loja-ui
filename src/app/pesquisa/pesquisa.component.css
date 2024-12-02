@@ -1,0 +1,27 @@
+.card {
+    max-width: 1000px; /* Limita a largura máxima */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 20px; /* Adiciona espaço interno */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona um leve sombreamento */
+    border-radius: 8px; 
+    background-color: #fff; 
+  }
+  
+  .headerDiv {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: space-between; /* Espaça as divs igualmente */
+    align-items: center; /* Alinha verticalmente, se necessário */
+    width: 100%; /* Largura total */
+    height: 100px; /* Altura para demonstração */
+  }
+  
+  .left, .center, .right {
+    padding: 10px;
+  }
+  
+  .right p-button{
+    padding-left: 20px;
+  } 
+  
