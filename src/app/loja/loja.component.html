@@ -1,22 +1,21 @@
 <div class="palco"> 
 <header>
-    <p-toolbar>
-        <div class="p-toolbar-group-start">
-            <img src="LojaLogo.jpeg" alt="aaain" width="150" height="100">
+    <div class="headerDiv">
+        <div class="left">
+            <img src="Logo.png" alt="aaain" width="250" height="150">
         </div>
-        <div class="p-toolbar-group-center">
+        <div class="center">
             <span class="p-input-icon-left">
-                <i class="pi pi-search"></i>
-                <input pInputText placeholder="Buscar produtos" />
-            </span>
+            <i class="pi pi-search"></i>
+            <input pInputText placeholder="Buscar produtos" />   </span>
         </div>
-        
-        <div class="p-toolbar-group-end">
-            <p-button icon="pi pi-cog" class="mr-2" />
-            <p-button icon="pi pi-shopping-cart" />
-            
+        <div class="right">
+            <p-menu #menu [model]="items" [popup]="true" />
+            <p-button (onClick)="menu.toggle($event)" icon="pi pi-ellipsis-v" size="large"/>
+            <p-button class="botao" icon="pi pi-shopping-cart" size="large" />
         </div>
-    </p-toolbar>
+    </div>
+
 </header>
 
 <main>
@@ -26,7 +25,7 @@
     [value]="produtos" 
     [numVisible]="5" 
     [numScroll]="3" 
-    [circular]="false" 
+    [circular]="true" 
     [responsiveOptions]="responsiveOptions">
   
         <ng-template let-product pTemplate="item">
@@ -38,7 +37,7 @@
                     [alt]="product.nome" 
                     class="w-full border-round" />
                 <p-tag 
-                    [value]="product.estoque" 
+                    [value]="'Estoque: ' + product.estoque" 
                     [severity]="getSeverity(product.estoque)" 
                     class="absolute" 
                     [ngStyle]="{ 'left.px': 5, 'top.px': 5 }" />
@@ -66,7 +65,7 @@
     [value]="produtos" 
     [numVisible]="5" 
     [numScroll]="3" 
-    [circular]="false" 
+    [circular]="true" 
     [responsiveOptions]="responsiveOptions">
   
         <ng-template let-product pTemplate="item">
@@ -78,7 +77,7 @@
                     [alt]="product.nome" 
                     class="w-full border-round" />
                 <p-tag 
-                    [value]="product.estoque" 
+                    [value]="'Estoque: ' + product.estoque"
                     [severity]="getSeverity(product.estoque)" 
                     class="absolute" 
                     [ngStyle]="{ 'left.px': 5, 'top.px': 5 }" />
@@ -106,7 +105,7 @@
     [value]="produtos" 
     [numVisible]="5" 
     [numScroll]="3" 
-    [circular]="false" 
+    [circular]="true" 
     [responsiveOptions]="responsiveOptions">
   
         <ng-template let-product pTemplate="item">
@@ -118,7 +117,7 @@
                     [alt]="product.nome" 
                     class="w-full border-round" />
                 <p-tag 
-                    [value]="product.estoque" 
+                    [value]="'Estoque: ' + product.estoque" 
                     [severity]="getSeverity(product.estoque)" 
                     class="absolute" 
                     [ngStyle]="{ 'left.px': 5, 'top.px': 5 }" />

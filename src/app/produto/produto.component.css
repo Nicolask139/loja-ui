@@ -1,0 +1,37 @@
+.headerDiv {
+  background-color: white;
+  padding-top: 100px;
+  padding-bottom: 150px;
+  display: flex;
+  justify-content: space-between; /* Espaça as divs igualmente */
+  align-items: center; /* Alinha verticalmente, se necessário */
+  width: 100%; /* Largura total */
+  height: 100px; /* Altura para demonstração */
+}
+
+p{
+  font-size: 30px;
+}
+
+.left, .center, .right {
+  padding: 10px;
+}
+
+.right p-button{
+  padding-left: 20px;
+} 
+
+.sobre{
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: row;
+}
+
+.central{
+  height: 1000px;
+  width: 1500px;
+  margin: auto;
+}
+
+
+  

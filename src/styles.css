@@ -2,16 +2,6 @@
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
 
-body {
-    background-image: url('../public/tela.webp');
-    background-size: cover;
-    background-position: center center; 
-    background-attachment: fixed; 
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-}
-
-:root{
-    --surface-ground: #ffffff; /* Define branco puro */
+body{
+    background-color: white;
 }

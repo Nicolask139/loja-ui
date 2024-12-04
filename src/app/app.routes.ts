@@ -17,5 +17,15 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./loja/loja.component').then((m) => m.LojaComponent),
       },
+      {
+        path: 'pesquisa', 
+        loadComponent: () =>
+          import('./pesquisa/pesquisa.component').then((m) => m.PesquisaComponent),
+      },
+      {
+        path: 'produto', 
+        loadComponent: () =>
+          import('./produto/produto.component').then((m) => m.ProdutoComponent),
+      },
       { path: '**', redirectTo: '' }, 
     ];

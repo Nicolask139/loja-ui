@@ -9,7 +9,8 @@
             <input pInputText placeholder="Buscar produtos" />   </span>
         </div>
         <div class="right">
-            <p-button class="botao" icon="pi pi-cog" size="large"/>
+            <p-menu #menu [model]="items" [popup]="true" />
+            <p-button (onClick)="menu.toggle($event)" icon="pi pi-ellipsis-v" size="large"/>
             <p-button class="botao" icon="pi pi-shopping-cart" size="large" />
         </div>
     </div>

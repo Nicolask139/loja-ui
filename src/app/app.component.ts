@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { LojaComponent } from './loja/loja.component';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,

@@ -6,21 +6,39 @@ import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
 import { CommonModule } from '@angular/common';
 import { InputTextModule } from 'primeng/inputtext';
+import { MenuItem } from 'primeng/api';
+import { MenuModule } from 'primeng/menu';
 
 @Component({
   selector: 'app-pesquisa',
   standalone: true,
-  imports: [InputTextModule, RouterOutlet, DataViewModule, ButtonModule, TagModule, CommonModule],
+  imports: [MenuModule, InputTextModule, RouterOutlet, DataViewModule, ButtonModule, TagModule, CommonModule],
   templateUrl: './pesquisa.component.html',
   styleUrl: './pesquisa.component.css'
 })
 export class PesquisaComponent implements OnInit{
   produtos: any[] = [];
   responsiveOptions: any;
+  items: MenuItem[] | undefined;
 
   constructor(private pesquisaService: PesquisaService) {}
 
   ngOnInit(): void {
+    this.items = [
+      {
+          label: 'Menu',
+          items: [
+              {
+                  label: 'Finalizar cadastro!',
+                  icon: 'pi pi-exclamation-circle'
+              },
+              {
+                  label: 'Perfil',
+                  icon: 'pi pi-user'
+              }
+          ]
+        }
+      ]
     this.pesquisaService.getDados().subscribe({
       next: (response) => {
         this.produtos = response; 
