@@ -1,24 +1,50 @@
-<div class="palco"> 
 <header>
-    <div class="headerDiv">
-        <div class="left">
-            <img src="Logo.png" alt="aaain" width="250" height="150">
+    <div class="header">
+        <div class="esquerda">
+            <img src="facebook.png" alt="" height="30px">
+            <img src="facebook.png" alt="" height="30px">
+            <img src="facebook.png" alt="" height="30px">
+            <img src="facebook.png" alt="" height="30px">
         </div>
-        <div class="center">
-            <span class="p-input-icon-left">
-            <i class="pi pi-search"></i>
-            <input pInputText placeholder="Buscar produtos" />   </span>
+        <div class="meio">
+            <h1>NOME DA LOJA</h1>
+            <p>PRODUTO DA LOJA</p>
         </div>
-        <div class="right">
-            <p-menu #menu [model]="items" [popup]="true" />
-            <p-button (onClick)="menu.toggle($event)" icon="pi pi-ellipsis-v" size="large"/>
-            <p-button class="botao" icon="pi pi-shopping-cart" size="large" />
+        <div class="direita">
+            <p>Minha conta</p>
+            <p>Carrinho:</p>
+            <p>R$0.00</p>
         </div>
     </div>
-
+    
+    <div class="opcoes">
+        <a href="">HOME</a>
+        <a href="">VELAS</a>
+        <a href="">FRAGRANCIAS</a>
+        <a href="">ARTESANATOS</a>
+        <a href="">DECORAÇÔES</a>
+        <a href="">SOBRE</a>
+    </div>
 </header>
-
 <main>
+
+    <div class="imagem"></div>
+
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <main>
     <h1>{{ "Categoria: " + produtos[0]?.categoria }}</h1> 
 
     <p-carousel 
@@ -163,5 +189,4 @@
 
 
 </footer>
-</div>
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> -->

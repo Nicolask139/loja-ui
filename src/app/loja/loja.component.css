@@ -1,150 +1,69 @@
-.palco{
-  background-size: cover;
-  background-position: center center; 
-  background-attachment: fixed; 
-  height: 100vh;
-  width: 100%;
-}
-
-.headerDiv {
+.header {
   display: flex;
-  justify-content: space-between; /* Espaça as divs igualmente */
-  align-items: center; /* Alinha verticalmente, se necessário */
-  width: 100%; /* Largura total */
-  height: 100px; /* Altura para demonstração */
+  background-color: #000000;
+  padding: 40px;
+  margin: 0px;
+  border: 0px;
+  justify-content: space-between; 
+  width: 100%; 
 }
 
-.left, .center, .right {
-  padding: 10px;
+.header h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-style: italic;
+  padding: 0px 0px 0px 40px;
+  margin: 0px;
+  color: #ffb222;
 }
 
-.right p-button{
-  padding-left: 20px;
-} 
-
-.center {
-  text-align: center; /* Alinha o texto no centro */
-  flex-grow: 1; /* Faz com que ocupe o espaço central */
+.header p {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-style: italic;
+  margin: 0px;
+  padding: 0px 0px 0px 40px;
+  color: #ffb222;
 }
 
-.divHeader{
+.meio{
+  text-align: center;
+}
+
+.esquerda, .direita{
+  flex-grow: 1;
+}
+
+.esquerda p, .direita p{
+  display: inline;
+}
+
+.direita{
+  text-align: end;
+}
+
+.opcoes {
+  padding-top: 10px;
+  display: flex;
   justify-content: center;
-  align-items: center;
-  justify-items: center;
+  width: 100%;
+  background-color: #000000;
 }
 
-.imagem{
-  justify-items: left;
+.opcoes a {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 20px;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 0 40px; 
+  margin: 0px;
 }
 
-h1{
-  padding-left: 50px;
-}
-
-header{
-  padding-bottom: 50px;
-  padding-top: 50px;
-  align-items: center;
-
-}
-
-.container {
-  border-radius: 20px;
-  border: 2px solid rgb(0, 0, 0); 
+.imagem {
   background-color: aliceblue;
-  justify-items: center;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* 3 colunas de tamanho igual */
-  gap: 20px; /* Espaço entre as colunas */
-  margin: 40px; /* Margem ao redor do container */
+  width: 100%;
+  height: 400px; 
+  object-fit: cover; 
 }
-
-.coluna{
-  padding-top: 40px;
-  justify-items: center;
-}
-
-.coluna a {
-    
-  display: block; /* Cada link será em um bloco, para garantir que fiquem um abaixo do outro */
-  margin-bottom: 10px; /* Espaço entre os links */
-  text-decoration: none; /* Remover o sublinhado padrão dos links */
-  color: black; /* Cor do texto */
-  font-size: 30px; /* Tamanho da fonte */
-  margin-bottom: 40px;
-}
-
-
-/* Estilo do h1 */
-h1 {
-  color: black; /* Título em branco */
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-/* Estilo para o carousel */
-p-carousel {
-  background-color: black; /* Fundo do carousel preto */
-  border: 1px solid white; /* Borda branca */
-  padding: 10px;
-}
-
-/* Estilo dos itens dentro do carousel */
-p-carousel .border-1 {
-  background-color: #222; /* Fundo dos itens em um tom de preto mais suave */
-  color: white; /* Texto branco */
-}
-
-/* Estilo para a imagem */
-p-carousel img {
-  border-radius: 10px;
-  border: 2px solid #444; /* Borda leve em torno da imagem */
-}
-  
- /* Mudando a cor de fundo e texto do p-tag */
-::ng-deep .p-tag {
-  background-color: #444 !important;
-  color: white !important;
-  border: none !important;
-}
-
-/* Modificando a cor do texto no hover */
-::ng-deep .p-tag:hover {
-  background-color: #555 !important;
-}
-
-/* Estilo do texto do nome do produto */
-p-carousel .font-medium {
-  font-size: 1.2rem;
-  color: white; /* Nome do produto em branco */
-}
-
-/* Estilo do preço */
-p-carousel .font-semibold.text-xl {
-  font-size: 1.5rem;
-  color: #FFD700; /* Cor dourada para o preço */
-}
-
-  /* Sobrescrevendo o estilo de fundo do botão para todos os p-buttons */
-::ng-deep .p-button {
-  background-color: #444 !important;
-  color: white !important;
-  border: none !important;
-  transition: background-color 0.3s ease !important;
-}
-
-/* Hover */
-::ng-deep .p-button:hover {
-  background-color: #555 !important;
-  border-color: #777 !important;
-}
-
-/* Focus */
-::ng-deep .p-button:focus {
-  outline: none !important;
-  box-shadow: 0 0 5px rgba(255, 165, 0, 0.8) !important;
-}
-  
-  
-
-
