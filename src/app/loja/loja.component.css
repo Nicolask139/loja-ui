@@ -12,7 +12,7 @@
   font-family: "Cormorant Garamond", serif;
   font-weight: 400;
   font-style: italic;
-  padding: 0px 0px 0px 40px;
+  padding: 0px 0px 0px 60px;
   margin: 0px;
   color: #ffb222;
 }
@@ -22,19 +22,26 @@
   font-weight: 400;
   font-style: italic;
   margin: 0px;
-  padding: 0px 0px 0px 40px;
   color: #ffb222;
+}
+
+.meio p{
+  padding: 0px 0px 0px 60px;
+}
+
+.conta{
+  padding-right: 30px;
 }
 
 .meio{
   text-align: center;
-}
-
-.esquerda, .direita{
   flex-grow: 1;
 }
 
-.esquerda p, .direita p{
+.esquerda img{
+  padding-left: 10px;
+}
+.direita p{
   display: inline;
 }
 
@@ -43,11 +50,20 @@
 }
 
 .opcoes {
+  padding-bottom: 40px;
   padding-top: 10px;
   display: flex;
   justify-content: center;
   width: 100%;
   background-color: #000000;
+}
+
+.opcoes p{
+  color: white;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 20px;
 }
 
 .opcoes a {
@@ -64,6 +80,129 @@
 .imagem {
   background-color: aliceblue;
   width: 100%;
-  height: 400px; 
+  height: 500px; 
   object-fit: cover; 
 }
+
+.linha-com-texto {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+  color: #ffb222;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 40px;
+}
+
+.linha-com-texto::before,
+.linha-com-texto::after {
+  content: "";
+  flex: 1;
+  border-bottom: 2px solid black; 
+  margin: 0 10px; 
+}
+
+input[type="text"] {
+  width: 300px;
+  padding: 10px;
+  border: 2px solid white;
+  border-radius: 10px;
+  background-color: white; 
+  color: black; 
+  font-size: 16px;
+  outline: none; 
+}
+
+input[type="text"]::placeholder {
+  color: #cccccc; 
+}
+
+input[type="text"]:focus {
+  border-color: #ffb222; 
+  box-shadow: 0 0 8px #ffb222; 
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.carrosel {
+  display: flex; /* Ativa o Flexbox */
+  flex-direction: column; /* Direção em coluna */
+  border: 1px solid #333;
+  color: white;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  width: 500px;
+  height: 700px;
+  border-radius: 5px; 
+}
+
+.divImagem {
+  flex: 3; /* Ocupa mais espaço (maior proporção) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.divImagem img {
+  width: 100%; /* Faz a imagem ocupar toda a largura da div */
+  object-fit: cover; /* Garante que a imagem mantenha a proporção */
+}
+
+.divComprar h1{
+  color: #000;
+}
+
+.divComprar p{
+  color: #ffb222;
+}
+
+.divBotao {
+  flex: 1; /* Ocupa uma porção igual ao restante */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.divComprar {
+  flex: 1; /* Ocupa menos espaço */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.full-width-button {
+  width: 100%; 
+  background-color: #000;
+  color: #fff; 
+  border: none; 
+  border-radius: 0; 
+  padding: 15px;
+  font-size: 16px; 
+  cursor: pointer; 
+}
+
+.full-width-button:hover {
+  background-color: #333; 
+}
+
+.star-rating {
+  flex: 1; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px; 
+  color: #ccc;
+}
+
+
+
+
