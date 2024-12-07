@@ -1,13 +1,14 @@
 import { LojaService } from './loja.service';
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
+
 
 
 @Component({
   selector: 'app-loja',
   standalone: true,
-  imports: [RouterOutlet, CommonModule],
+  imports: [RouterLink, RouterOutlet, CommonModule],
   templateUrl: './loja.component.html',
   styleUrls: ['./loja.component.css'], 
 })

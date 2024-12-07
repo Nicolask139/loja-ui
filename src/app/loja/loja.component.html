@@ -7,7 +7,7 @@
             <img src="call.png" alt="" height="25px">
         </div>
         <div class="meio">
-            <h1>NOME DA LOJA</h1>
+            <h1>Sisal de cetim</h1>
             <p>PRODUTO DA LOJA</p>
         </div>
         <div class="direita">
@@ -19,7 +19,7 @@
     
     <div class="opcoes">
         <a href="">HOME</a>
-        <a href="">VELAS</a>
+        <a [routerLink]="['']" fragment="secao1">VELAS</a>
         <a href="">FRAGRANCIAS</a>
         <a href="">ARTESANATOS</a>
         <a href="">DECORAÇÔES</a>
@@ -33,39 +33,29 @@
     </div>
 </header>
 <main>
+      
     <br>
     <div class="linha-com-texto">Destaques</div>
     <br>
     <div class="imagem"></div>
     <br>
-    <div class="linha-com-texto">Velas</div>
+    <section id="secao1">
+        <div class="linha-com-texto">Linha de Velas</div>
+    </section>
     <br>
 
     <div class="container" *ngFor="let produto of produtos">
         <div class="carrosel">
-
             <div class="divImagem">
                 <img [src]="produto.imagemUrl" alt="a" width="100%">
             </div>
-
             <div class="divComprar">
                 <h1>{{produto.nome}}</h1>
                 <p>Valor: R${{produto.preco}}</p>
-                <div class="star-rating">
-                    <span class="star" data-value="1">★</span>
-                    <span class="star" data-value="2">★</span>
-                    <span class="star" data-value="3">★</span>
-                    <span class="star" data-value="4">★</span>
-                    <span class="star" data-value="5">★</span>
-                  </div>
-    
             </div>
-
-
             <div class="divBotao">
                 <button class="full-width-button">Comprar</button>
             </div>
-
         </div>
         <div class="carrosel">
             <div class="divImagem">
@@ -73,7 +63,10 @@
             </div>
             <div class="divComprar">
                 <h1>{{produto.nome}}</h1>
-                <p>{{produto.preco}}</p>
+                <p>Valor: R${{produto.preco}}</p>
+            </div>
+            <div class="divBotao">
+                <button class="full-width-button">Comprar</button>
             </div>
         </div>
         <div class="carrosel">
@@ -82,14 +75,17 @@
             </div>
             <div class="divComprar">
                 <h1>{{produto.nome}}</h1>
-                <p>{{produto.preco}}</p>
+                <p>Valor: R${{produto.preco}}</p>
+            </div>
+            <div class="divBotao">
+                <button class="full-width-button">Comprar</button>
             </div>
         </div>
-
     </div>
+    <p style="padding-left: 60px;">Ver toda linha -></p>
 
     <br>
-    <div class="linha-com-texto">Fragrancias</div>
+    <div class="linha-com-texto">Linha de Fragrâncias</div>
     <br>
 
     <div class="container" *ngFor="let produto of produtos">
@@ -98,8 +94,11 @@
                 <img [src]="produto.imagemUrl" alt="a" width="100%">
             </div>
             <div class="divComprar">
-                <p>{{produto.nome}}</p>
-                <p>{{produto.preco}}</p>
+                <h1>{{produto.nome}}</h1>
+                <p>Valor: R${{produto.preco}}</p>
+            </div>
+            <div class="divBotao">
+                <button class="full-width-button">Comprar</button>
             </div>
         </div>
         <div class="carrosel">
@@ -107,8 +106,11 @@
                 <img [src]="produto.imagemUrl" alt="a" width="100%">
             </div>
             <div class="divComprar">
-                <p>{{produto.nome}}</p>
-                <p>{{produto.preco}}</p>
+                <h1>{{produto.nome}}</h1>
+                <p>Valor: R${{produto.preco}}</p>
+            </div>
+            <div class="divBotao">
+                <button class="full-width-button">Comprar</button>
             </div>
         </div>
         <div class="carrosel">
@@ -116,15 +118,18 @@
                 <img [src]="produto.imagemUrl" alt="a" width="100%">
             </div>
             <div class="divComprar">
-                <p>{{produto.nome}}</p>
-                <p>{{produto.preco}}</p>
+                <h1>{{produto.nome}}</h1>
+                <p>Valor: R${{produto.preco}}</p>
+            </div>
+            <div class="divBotao">
+                <button class="full-width-button">Comprar</button>
             </div>
         </div>
-
     </div>
+    <p style="padding-left: 60px;">Ver toda linha -></p>
   
     <br>
-    <div class="linha-com-texto">Artesanatos</div>
+    <div class="linha-com-texto">Linha de Artesanatos</div>
     <br>
 
     <div class="container" *ngFor="let produto of produtos">
@@ -133,8 +138,11 @@
                 <img [src]="produto.imagemUrl" alt="a" width="100%">
             </div>
             <div class="divComprar">
-                <p>{{produto.nome}}</p>
-                <p>{{produto.preco}}</p>
+                <h1>{{produto.nome}}</h1>
+                <p>Valor: R${{produto.preco}}</p>
+            </div>
+            <div class="divBotao">
+                <button class="full-width-button">Comprar</button>
             </div>
         </div>
         <div class="carrosel">
@@ -142,8 +150,11 @@
                 <img [src]="produto.imagemUrl" alt="a" width="100%">
             </div>
             <div class="divComprar">
-                <p>{{produto.nome}}</p>
-                <p>{{produto.preco}}</p>
+                <h1>{{produto.nome}}</h1>
+                <p>Valor: R${{produto.preco}}</p>
+            </div>
+            <div class="divBotao">
+                <button class="full-width-button">Comprar</button>
             </div>
         </div>
         <div class="carrosel">
@@ -151,15 +162,18 @@
                 <img [src]="produto.imagemUrl" alt="a" width="100%">
             </div>
             <div class="divComprar">
-                <p>{{produto.nome}}</p>
-                <p>{{produto.preco}}</p>
+                <h1>{{produto.nome}}</h1>
+                <p>Valor: R${{produto.preco}}</p>
+            </div>
+            <div class="divBotao">
+                <button class="full-width-button">Comprar</button>
             </div>
         </div>
-
     </div>
+    <p style="padding-left: 60px;">Ver toda linha -></p>
 
     <br>
-    <div class="linha-com-texto">Decorações</div>
+    <div class="linha-com-texto">Linha de Decorações</div>
     <br>
 
     <div class="container" *ngFor="let produto of produtos">
@@ -168,8 +182,11 @@
                 <img [src]="produto.imagemUrl" alt="a" width="100%">
             </div>
             <div class="divComprar">
-                <p>{{produto.nome}}</p>
-                <p>{{produto.preco}}</p>
+                <h1>{{produto.nome}}</h1>
+                <p>Valor: R${{produto.preco}}</p>
+            </div>
+            <div class="divBotao">
+                <button class="full-width-button">Comprar</button>
             </div>
         </div>
         <div class="carrosel">
@@ -177,8 +194,11 @@
                 <img [src]="produto.imagemUrl" alt="a" width="100%">
             </div>
             <div class="divComprar">
-                <p>{{produto.nome}}</p>
-                <p>{{produto.preco}}</p>
+                <h1>{{produto.nome}}</h1>
+                <p>Valor: R${{produto.preco}}</p>
+            </div>
+            <div class="divBotao">
+                <button class="full-width-button">Comprar</button>
             </div>
         </div>
         <div class="carrosel">
@@ -186,14 +206,20 @@
                 <img [src]="produto.imagemUrl" alt="a" width="100%">
             </div>
             <div class="divComprar">
-                <p>{{produto.nome}}</p>
-                <p>{{produto.preco}}</p>
+                <h1>{{produto.nome}}</h1>
+                <p>Valor: R${{produto.preco}}</p>
+            </div>
+            <div class="divBotao">
+                <button class="full-width-button">Comprar</button>
             </div>
         </div>
-
     </div>
-
-
-
+    <p style="padding-left: 60px;">Ver toda linha -></p>
 </main>
+
+<footer>
+
+
+
+</footer>
 

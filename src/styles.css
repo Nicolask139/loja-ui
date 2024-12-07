@@ -2,8 +2,12 @@
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
 
-body{
-    background-color: white;
+body {
+    background-image: url('/parede.webp'); 
+    background-position: top left; 
     margin: 0;
+    background-repeat: repeat; /* Permite a repetição da imagem */
+    background-size: 850px 850px; /* Ajusta o tamanho da imagem repetida */
     padding: 0;
-}
+  }
+  

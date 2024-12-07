@@ -132,61 +132,60 @@ input[type="text"]:focus {
 }
 
 .carrosel {
-  display: flex; /* Ativa o Flexbox */
-  flex-direction: column; /* Direção em coluna */
+  background-color: black;
+  display: flex; 
+  flex-direction: column; 
   border: 1px solid #333;
   color: white;
   font-size: 16px;
   font-family: Arial, sans-serif;
-  width: 500px;
-  height: 700px;
+  width: 450px;
+  height: 650px;
   border-radius: 5px; 
 }
 
-.divImagem {
-  flex: 3; /* Ocupa mais espaço (maior proporção) */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .divImagem img {
-  width: 100%; /* Faz a imagem ocupar toda a largura da div */
-  object-fit: cover; /* Garante que a imagem mantenha a proporção */
+  width: 100%; 
+  object-fit: cover; 
 }
 
 .divComprar h1{
-  color: #000;
+  color: white;
 }
 
 .divComprar p{
   color: #ffb222;
 }
 
-.divBotao {
-  flex: 1; /* Ocupa uma porção igual ao restante */
-  display: flex;
+.divImagem {
+  flex: 0 0 60%; 
   align-items: center;
   justify-content: center;
 }
 
 .divComprar {
-  flex: 1; /* Ocupa menos espaço */
-  display: flex;
+  flex: 0 0 20%; 
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
 
+.divBotao {
+  flex: 0 0 8.1%;
+  align-items: center;
+  justify-content: center;
+}
+
 .full-width-button {
+  font-family: "Cormorant Garamond", serif;
+  height: 100%;
   width: 100%; 
   background-color: #000;
   color: #fff; 
   border: none; 
   border-radius: 0; 
-  padding: 15px;
-  font-size: 16px; 
+  font-size: 25px; 
   cursor: pointer; 
 }
 
@@ -202,7 +201,4 @@ input[type="text"]:focus {
   font-size: 24px; 
   color: #ccc;
 }
-
-
-
 
