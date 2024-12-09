@@ -1,93 +1,94 @@
-<header>
-    <div class="header">
-        <div class="esquerda">
-            <img src="facebook.png" alt="" height="25px">
-            <img src="instagram.png" alt="" height="25px">
-            <img src="whatsapp.png" alt="" height="25px">
-            <img src="call.png" alt="" height="25px">
-        </div>
-        <div class="meio">
-            <h1>Sisal de cetim</h1>
-            <p>PRODUTO DA LOJA</p>
-        </div>
-        <div class="direita">
-            <p class="conta">Minha conta</p>
-            <p>Carrinho:</p>
-            <p>R$0.00</p>
-        </div>
-    </div>
-    
-    <div class="opcoes">
-        <a href="">HOME</a>
-        <a [routerLink]="['']" fragment="secao1">VELAS</a>
-        <a href="">FRAGRANCIAS</a>
-        <a href="">ARTESANATOS</a>
-        <a href="">DECORAÇÔES</a>
-        <a href="">SOBRE</a>
-    </div>
 
-    <div class="opcoes">
-
-        <input type="text" placeholder="Pesquisar produtos...">
-
+<div class="header">
+    <div class="esquerda">
+        <a class="redes" href=""><img src="facebook.png" alt="" height="25px"></a>
+        <a class="redes" href="https://www.instagram.com/sisaldecetim/" target="_blank"><img src="instagram.png" alt="" height="25px"></a>
+        <a class="redes" href=""><img src="whatsapp.png" alt="" height="25px"></a>
+        <a class="redes" href=""><img src="call.png" alt="" height="25px"></a>
+        <p style="padding-left: 40px;">Nos visite! ^</p>
     </div>
-</header>
-<main>
-      
+    <div class="meio">
+        <h1>Sisal de cetim</h1>
+        <p>Artesanais</p>
+    </div>
+    <div class="direita">
+        <p class="conta">Minha conta</p>
+        <p>Carrinho:</p>
+        <p>R$0.00</p>
+    </div>
+</div>
+
+<div class="opcoes">
+    <a routerLink="" fragment="home">HOME</a>
+    <a routerLink="" fragment="velas">VELAS</a>
+    <a routerLink="" fragment="fragrancias">FRAGRÂNCIAS</a>
+    <a routerLink="" fragment="artesanatos">ARTESANATOS</a>
+    <a routerLink="" fragment="decoracoes">DECORAÇÔES</a>
+    <a routerLink="" fragment="sobre">SOBRE</a>
+</div>
+
+<section id="home">
+<div class="opcoes">
+
+    <input type="text" placeholder="Pesquisar produtos...">
+
+</div>
+    <button *ngIf="showBackToTop" (click)="scrollToTop()" id="myBtn"><a href="#top" style="color: white"></a><i class="pi pi-arrow-up "></i></button>
     <br>
     <div class="linha-com-texto">Destaques</div>
     <br>
     <div class="imagem"></div>
     <br>
-    <section id="secao1">
-        <div class="linha-com-texto">Linha de Velas</div>
-    </section>
-    <br>
+</section>
+<section id="velas">
+    <div class="linha-com-texto">Linha de Velas</div>
+<br>
 
-    <div class="container" *ngFor="let produto of produtos">
-        <div class="carrosel">
-            <div class="divImagem">
-                <img [src]="produto.imagemUrl" alt="a" width="100%">
-            </div>
-            <div class="divComprar">
-                <h1>{{produto.nome}}</h1>
-                <p>Valor: R${{produto.preco}}</p>
-            </div>
-            <div class="divBotao">
-                <button class="full-width-button">Comprar</button>
-            </div>
+<div class="container" *ngFor="let produto of produtos">
+    <div class="carrosel">
+        <div class="divImagem">
+            <img [src]="produto.imagemUrl" alt="a" width="100%">
         </div>
-        <div class="carrosel">
-            <div class="divImagem">
-                <img [src]="produto.imagemUrl" alt="a" width="100%">
-            </div>
-            <div class="divComprar">
-                <h1>{{produto.nome}}</h1>
-                <p>Valor: R${{produto.preco}}</p>
-            </div>
-            <div class="divBotao">
-                <button class="full-width-button">Comprar</button>
-            </div>
+        <div class="divComprar">
+            <h1>{{produto.nome}}</h1>
+            <p>Valor: R${{produto.preco}}</p>
         </div>
-        <div class="carrosel">
-            <div class="divImagem">
-                <img [src]="produto.imagemUrl" alt="a" width="100%">
-            </div>
-            <div class="divComprar">
-                <h1>{{produto.nome}}</h1>
-                <p>Valor: R${{produto.preco}}</p>
-            </div>
-            <div class="divBotao">
-                <button class="full-width-button">Comprar</button>
-            </div>
+        <div class="divBotao">
+            <button class="full-width-button">Comprar</button>
         </div>
     </div>
-    <p style="padding-left: 60px;">Ver toda linha -></p>
+    <div class="carrosel">
+        <div class="divImagem">
+            <img [src]="produto.imagemUrl" alt="a" width="100%">
+        </div>
+        <div class="divComprar">
+            <h1>{{produto.nome}}</h1>
+            <p>Valor: R${{produto.preco}}</p>
+        </div>
+        <div class="divBotao">
+            <button class="full-width-button">Comprar</button>
+        </div>
+    </div>
+    <div class="carrosel">
+        <div class="divImagem">
+            <img [src]="produto.imagemUrl" alt="a" width="100%">
+        </div>
+        <div class="divComprar">
+            <h1>{{produto.nome}}</h1>
+            <p>Valor: R${{produto.preco}}</p>
+        </div>
+        <div class="divBotao">
+            <button class="full-width-button">Comprar</button>
+        </div>
+    </div>
+</div>
+<p style="padding-left: 60px;">Ver toda linha -></p>
 
-    <br>
+<br>
+</section>
+<section id="fragrancias">
     <div class="linha-com-texto">Linha de Fragrâncias</div>
     <br>
-
     <div class="container" *ngFor="let produto of produtos">
         <div class="carrosel">
             <div class="divImagem">
@@ -127,11 +128,11 @@
         </div>
     </div>
     <p style="padding-left: 60px;">Ver toda linha -></p>
-  
-    <br>
+<br>
+</section>
+<section id="artesanatos">
     <div class="linha-com-texto">Linha de Artesanatos</div>
     <br>
-
     <div class="container" *ngFor="let produto of produtos">
         <div class="carrosel">
             <div class="divImagem">
@@ -171,11 +172,11 @@
         </div>
     </div>
     <p style="padding-left: 60px;">Ver toda linha -></p>
-
     <br>
+</section>
+<section id="decoracoes">
     <div class="linha-com-texto">Linha de Decorações</div>
     <br>
-
     <div class="container" *ngFor="let produto of produtos">
         <div class="carrosel">
             <div class="divImagem">
@@ -215,11 +216,18 @@
         </div>
     </div>
     <p style="padding-left: 60px;">Ver toda linha -></p>
-</main>
+    <br>
+    <br>
+</section>
+<section id="sobre">
+    <div class="footer">
+        <div class="circulo"></div>
+        <div class="sobre">
+            <p style="color: aliceblue;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet impedit sint fugit necessitatibus incidunt ullam iureadadad possimus quidem ipsam aliquid eaque vitae, accusamus rerum, quas iusto repsadadadsellat ipsum voluptatem aliquam.
+            Loreadadadsadador exercitationem tempore ad laudantium porro assumenda cupiditate vel, cum ea? Nam adipisci soluta Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta aspernatur iste, mollitia doloribus consequatur asperiores deleniti! Consequuntur sit accusamus amet voluptate, autem est, aperiam dolores deserunt delectus magni consectetur at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi suscipit similique alias numquam sit, consequatur minima magni molestiae perspiciatis adipisci incidunt expedita, quo illum aut impedit voluptatibus pariatur voluptates nulla.</p>
+        </div>
+    </div>
 
-<footer>
+</section>
 
-
-
-</footer>
 

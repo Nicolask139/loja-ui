@@ -14,7 +14,7 @@
   font-style: italic;
   padding: 0px 0px 0px 60px;
   margin: 0px;
-  color: #ffb222;
+  color: #ffc04a;
 }
 
 .header p {
@@ -41,6 +41,7 @@
 .esquerda img{
   padding-left: 10px;
 }
+
 .direita p{
   display: inline;
 }
@@ -141,7 +142,7 @@ input[type="text"]:focus {
   font-family: Arial, sans-serif;
   width: 450px;
   height: 650px;
-  border-radius: 5px; 
+  border-radius: 10px; 
 }
 
 .divImagem img {
@@ -201,4 +202,49 @@ input[type="text"]:focus {
   font-size: 24px; 
   color: #ccc;
 }
+
+#myBtn {
+  position: fixed;
+  bottom: 30px;
+  float: right;
+  right: 4%;
+  left: 96%;
+  height: 60px;
+  width: 60px;
+  font-size: 12px;
+  border-color: transparent;
+  background-color: #ffb222;
+  padding: .5px;
+  border-radius: 100px;
+
+}
+
+#myBtn:hover {
+  background-color: #ffd689;
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center; /* Centraliza verticalmente */
+  background-color: #000;
+  height: 1000px;
+}
+
+.circulo{
+  height: 400px;
+  width: 400px;
+  background-color: white;
+  border-radius: 100%;
+}
+
+.sobre{
+  height: 400px;
+  width: 900px;
+  font-size: 25px;
+  padding-left: 70px;
+}
+
+
 

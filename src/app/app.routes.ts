@@ -2,18 +2,13 @@ import { Routes } from '@angular/router';
 
 
 export const routes: Routes = [
-    {
-        path: '', 
-        loadComponent: () =>
-          import('./login/login.component').then((m) => m.LoginComponent),
-      },
       {
         path: 'conta', 
         loadComponent: () =>
           import('./conta/conta.component').then((m) => m.ContaComponent),
       },
       {
-        path: 'loja', 
+        path: '', 
         loadComponent: () =>
           import('./loja/loja.component').then((m) => m.LojaComponent),
       },
@@ -26,6 +21,5 @@ export const routes: Routes = [
         path: 'produto', 
         loadComponent: () =>
           import('./produto/produto.component').then((m) => m.ProdutoComponent),
-      },
-      { path: '**', redirectTo: '' }, 
+      }
     ];
