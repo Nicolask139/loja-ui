@@ -1,54 +1,65 @@
-<header>
-    <div class="headerDiv">
-        <div class="left">
-            <img src="Logo.png" alt="aaain" width="250" height="150">
-        </div>
-        <div class="center">
-            <span class="p-input-icon-left">
-            <i class="pi pi-search"></i>
-            <input pInputText placeholder="Buscar produtos" />   </span>
-        </div>
-        <div class="right">
-            <p-menu #menu [model]="items" [popup]="true" />
-            <p-button (onClick)="menu.toggle($event)" icon="pi pi-ellipsis-v" size="large"/>
-            <p-button class="botao" icon="pi pi-shopping-cart" size="large" />
-        </div>
+
+<div class="header">
+    <div class="esquerda">
+        <a class="redes" href=""><img src="facebook.png" alt="" height="25px"></a>
+        <a class="redes" href="https://www.instagram.com/sisaldecetim/" target="_blank"><img src="instagram.png" alt="" height="25px"></a>
+        <a class="redes" href=""><img src="whatsapp.png" alt="" height="25px"></a>
+        <a class="redes" href=""><img src="call.png" alt="" height="25px"></a>
+        <p style="padding-left: 40px;">Nos visite! ^</p>
+    </div>
+    <div class="meio">
+        <h1>Sisal de cetim</h1>
+        <p>Artesanais</p>
+    </div>
+    <div class="direita">
+        <p class="conta">Minha conta</p>
+        <p>Carrinho:</p>
+        <p>R$0.00</p>
+    </div>
+</div>
+<div class="opcoes">
+
+    <input type="text" placeholder="Pesquisar produtos...">
+
+</div>
+
+<div class="comprar">
+
+    <div class="img"></div>
+    <div class="info">
+
+        <h1>Nome do produto...</h1>
+        <br>
+        <p>Descrição:</p>
+        <br>
+        <p>descriçao do produto Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto inventore voluptatem, id incidunt veniam praesentium. Aspernatur, ut saepe. Magni sint voluptas ut voluptates, quam deleniti quisquam. Voluptates totam nostrum quidem.</p>
+        <br>
+        <h1 class="valor">Valor: R$29,99</h1>
+        <br><br><br>
+        <input type="text" placeholder="CEP">
     </div>
 
-</header>
+</div>
 
-<div class="central">
-    <div class="card">
-        <div class="card">
-            <p-divider align="left" type="solid">
-            <b>Sobre</b>
-            </p-divider>
-            <div class="sobre">
-                <img src="Logo.png" alt="aaain" width="500" height="250">
-                <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-                voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non numquam eius modi.
-                </p>
-            </div>
-        
-            <p-divider align="left" type="dotted">
-            <b>Materias</b>
-            </p-divider>
-        
-            <p class="sobre">
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui
-            officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.
-            </p>
-        
-            <p-divider align="left" type="dashed">
-            <b>Vendedor</b>
-            </p-divider>
-        
-            <p class="sobre">
-            Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
-            voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Donec vel volutpat ipsum. Integer nunc magna, posuere ut tincidunt eget, egestas vitae sapien. Morbi dapibus luctus odio.
-            </p>
-        </div>
+<div class="informacao">
+    <div class="desc">
+        <h1>Descrição:</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate pariatur nulla officiis, eligendi deserunt quod illo expedita vel cum facere asperiores soluta tempore itaque totam, ab explicabo eos consequuntur quidem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat blanditiis dolor beatae, eaque minus magnam nostrum ducimus ipsam earum eveniet. Fugit ad iste asperiores voluptate atque! Ex qui soluta minima.</p>
+    </div>
+    <div class="dimensao">
+        <h1>Dimensões:</h1>
+        <p>Altura: 50cm</p>
+        <p>Diametro: 20cm</p>
+        <p>Cores: Azul, Verde, Amarelo e Rosa</p>
+        <p>x: BLABLABLABLABLA</p>
+    </div>
+</div>
+<br><br>
+<div class="footer">
+    <div class="circulo"></div>
+    <div class="sobre">
+        <p style="color: aliceblue;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet impedit sint fugit necessitatibus incidunt ullam iureadadad possimus quidem ipsam aliquid eaque vitae, accusamus rerum, quas iusto repsadadadsellat ipsum voluptatem aliquam.
+        Loreadadadsadador exercitationem tempore ad laudantium porro assumenda cupiditate vel, cum ea? Nam adipisci soluta Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta aspernatur iste, mollitia doloribus consequatur asperiores deleniti! Consequuntur sit accusamus amet voluptate, autem est, aperiam dolores deserunt delectus magni consectetur at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi suscipit similique alias numquam sit, consequatur minima magni molestiae perspiciatis adipisci incidunt expedita, quo illum aut impedit voluptatibus pariatur voluptates nulla.</p>
     </div>
 </div>
 
