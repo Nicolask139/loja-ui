@@ -90,7 +90,7 @@ input[type="text"] {
 }
 
 input[type="text"]::placeholder {
-  color: #cccccc; 
+  color: #000; 
 }
 
 input[type="text"]:focus {
@@ -121,7 +121,7 @@ input[type="text"]:focus {
 }
 
 .info h1{
-  color: #ffffff;
+  color: #ffb222;
 }
 
 .info .valor{
@@ -183,7 +183,7 @@ input[type="text"]:focus {
   display: flex;
   justify-content: center;
   justify-items: center;
-  align-items: center; /* Centraliza verticalmente */
+  align-items: center; 
   background-color: #000;
   height: 1000px;
 }
@@ -202,3 +202,22 @@ input[type="text"]:focus {
   padding-left: 70px;
 }
 
+.divBotao{
+  padding-top: 80px;
+}
+
+.full-width-button {
+  height: 50px;
+  width: 200px;
+  font-family: "Cormorant Garamond", serif;
+  background-color: white;
+  color: #000; 
+  border: none; 
+  border-radius: 5px; 
+  font-size: 25px; 
+  cursor: pointer; 
+}
+
+.full-width-button:hover {
+  background-color: #333; 
+}

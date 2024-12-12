@@ -3,9 +3,9 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
       {
-        path: 'conta', 
+        path: 'contau', 
         loadComponent: () =>
-          import('./conta/conta.component').then((m) => m.ContaComponent),
+          import('./conta-l/conta-u.component').then((m) => m.ContaUComponent),
       },
       {
         path: '', 

@@ -3,11 +3,19 @@ import { Component, HostListener, OnInit, inject } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { HeaderComponent } from "../header/header.component";
+import { FooterComponent } from "../footer/footer.component";
 
 @Component({
   selector: 'app-loja',
   standalone: true,
-  imports: [RouterLink, RouterOutlet, CommonModule],
+  imports: [
+    RouterLink,
+    RouterOutlet,
+    CommonModule,
+    HeaderComponent,
+    FooterComponent
+],
   templateUrl: './loja.component.html',
   styleUrls: ['./loja.component.css'], 
 })

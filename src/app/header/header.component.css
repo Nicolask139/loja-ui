@@ -1,0 +1,51 @@
+.header {
+    display: flex;
+    background-color: #000000;
+    padding: 40px;
+    margin: 0px;
+    border: 0px;
+    justify-content: space-between; 
+    width: 100%; 
+}
+
+.header h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 400;
+    font-style: italic;
+    padding: 0px 0px 0px 60px;
+    margin: 0px;
+    color: #ffc04a;
+}
+
+.header p {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0px;
+    color: #ffb222;
+}
+
+.meio p{
+    padding: 0px 0px 0px 60px;
+}
+
+.conta{
+    padding-right: 30px;
+}
+
+.meio{
+    text-align: center;
+    flex-grow: 1;
+}
+
+.esquerda img{
+    padding-left: 10px;
+}
+
+.direita p{
+    display: inline;
+}
+
+.direita{
+    text-align: end;
+}

@@ -1,0 +1,22 @@
+.footer{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    background-color: #000;
+    height: 1000px;
+  }
+  
+  .circulo{
+    height: 400px;
+    width: 400px;
+    background-color: white;
+    border-radius: 100%;
+  }
+  
+  .sobre{
+    height: 400px;
+    width: 900px;
+    font-size: 25px;
+    padding-left: 70px;
+  }
