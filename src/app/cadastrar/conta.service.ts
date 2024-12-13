@@ -2,7 +2,7 @@ import { MessageService } from 'primeng/api';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../enviroments/enviroment';
-import { Usuario } from "./conta"
+import { Usuario } from './conta';
 
 @Injectable({
   providedIn: 'root'

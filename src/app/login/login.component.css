@@ -1,0 +1,54 @@
+.content-login{
+    font-family: "Cormorant Garamond", serif;
+    justify-items: center;
+  }
+  
+  .centro-login{
+    background-color: rgb(216, 202, 255);
+    width: 500px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 40px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 200px;
+  }
+  
+  input{
+    background-color: white;
+    color: black;
+  }
+  
+  label{
+    color: black;
+  }
+  
+  a{
+    color: black;
+  }
+  
+  a:hover{
+    color: gray;
+  }
+  
+  button{
+    width: 150px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    align-items: center;
+    background-color: white; 
+    color: black; 
+    padding: 10px 20px; 
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 8px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease;
+  }
+  button:hover{
+    background-color: gray; 
+  }
+  
+  input::placeholder{
+    color: gray;
+  }
