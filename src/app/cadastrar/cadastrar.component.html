@@ -1,162 +1,204 @@
-
-    <div class="content-cadastro">
-        <div>
-            <h1>Bem vindo ao Sisal de Cetim.</h1>
-            <h2>Faça cadastro para começar as compras!</h2>
+<div class="content-cadastro">
+    <div>
+      <h1>Bem vindo ao Sisal de Cetim.</h1>
+      <h2>Faça cadastro para começar as compras!</h2>
+    </div>
+    <div class="content">
+      <p-toast position="top-right" [hideTransitionOptions]="'1000ms'"></p-toast>
+      <div class="palco">
+        <div class="centro">
+          <form #form="ngForm">
+            <p-floatLabel>
+              <p-inputMask
+                [(ngModel)]="buscacep"
+                (onBlur)="buscarCEP(buscacep, form)"
+                name="cep"
+                mask="99999-999"
+                placeholder="99999-999"
+                required
+              ></p-inputMask>
+              <label>CEP</label>
+            </p-floatLabel>
+            <br />
+            <button (click)="buscarCEP(buscacep, form)" >
+              Buscar CEP
+            </button>
+            <br /><br />
+            <div>
+              <p-floatLabel>
+                <input pInputText placeholder="Pais..." name="pais" required />
+                <label>País</label>
+              </p-floatLabel>
+              <br /><br />
+              <p-floatLabel>
+                <input
+                  pInputText
+                  placeholder="Estado..."
+                  [(ngModel)]="estado"
+                  id="estado"
+                  name="estado"
+                  disabled="true"
+                  required
+                />
+                <label htmlFor="estado">Estado</label>
+              </p-floatLabel>
+              <br /><br />
+              <p-floatLabel>
+                <input
+                  pInputText
+                  placeholder="Cidade..."
+                  [(ngModel)]="cidade"
+                  id="cidade"
+                  name="cidade"
+                  disabled="true"
+                  required
+                />
+                <label htmlFor="cidade">Cidade</label>
+              </p-floatLabel>
+              <br /><br />
+              <p-floatLabel>
+                <input
+                  pInputText
+                  placeholder="Bairro..."
+                  [(ngModel)]="bairro"
+                  id="bairro"
+                  name="bairro"
+                  disabled="true"
+                  required
+                />
+                <label htmlFor="bairro">Bairro</label>
+              </p-floatLabel>
+              <br /><br />
+              <p-floatLabel>
+                <input
+                  pInputText
+                  placeholder="Rua..."
+                  [(ngModel)]="rua"
+                  id="rua"
+                  name="rua"
+                  disabled="true"
+                  required
+                />
+                <label htmlFor="rua">Rua</label>
+              </p-floatLabel>
+              <br /><br />
+              <p-floatLabel>
+                <input
+                  pInputText
+                  placeholder="Número..."
+                  name="numero"
+                  required
+                />
+                <label>Número</label>
+              </p-floatLabel>
+              <br /><br />
+              <p-floatLabel>
+                <input
+                  pInputText
+                  placeholder="Complemento..."
+                  name="complemento"
+                  required
+                />
+                <label>Complemento</label>
+              </p-floatLabel>
+            </div>
+            <br /><br />
+          </form>
         </div>
-        <div class="content">
-            <p-toast position="top-right" [hideTransitionOptions]="'1000ms'" ></p-toast>
-            <div class="palco">
-                <div class="centro">
-                    <form #form="ngForm">
-                    <p-floatLabel>
-                        <p-inputMask
-                        [(ngModel)]="buscacep"
-                        (onBlur)="buscarCEP(buscacep, form)"
-                        name="cep"
-                        mask="99999-999"
-                        placeholder="99999-999" />
-                        <label>CEP</label>
-                    </p-floatLabel>
-                    <button (click)="buscarCEP(buscacep, form)"[disabled]="form.invalid">a</button>
-                    <br><br>
-                    <div *ngIf="buscar">
-                        <p-floatLabel>
-                            <input
-                            pInputText placeholder="Pais..."
-                            name="pais"
-                            required />
-                            <label>Pais</label>
-                        </p-floatLabel>
-                        <br><br>
-                        <p-floatLabel>
-                            <input
-                            pInputText
-                            placeholder="Parana..."
-                            ngModel id="estado"
-                            name="estado"
-                            required />
-                            <label htmlFor="estado">Estado</label>
-                        </p-floatLabel>
-                        <br><br>
-                        <p-floatLabel>
-                            <input
-                            pInputText
-                            placeholder="Cidade..."
-                            ngModel id="cidade"
-                            name="cidade"
-                            required />
-                            <label htmlFor="cidade">Cidade</label>
-                        </p-floatLabel>
-                        <br><br>
-                        <p-floatLabel>
-                            <input
-                            pInputText
-                            placeholder="Bairro..."
-                            ngModel id="bairro"
-                            name="bairro"
-                            required />
-                            <label htmlFor="bairro">Bairro</label>
-                        </p-floatLabel>
-                        <br><br>
-                        <p-floatLabel>
-                            <input
-                            pInputText
-                            placeholder="Rua..."
-                            ngModel id="rua"
-                            name="rua"
-                            required />
-                            <label htmlFor="rua">rua</label>
-                        </p-floatLabel>
-                        <br><br>
-                        <p-floatLabel>
-                            <input
-                            pInputText
-                            placeholder="Numero..."
-                            name="numero"
-                            required />
-                            <label>Numero</label>
-                        </p-floatLabel>
-                        <br><br>
-                        <p-floatLabel>
-                            <input
-                            pInputText
-                            placeholder="Complemento..."
-                            name="complemento"
-                            required />
-                            <label>Complemento</label>
-                        </p-floatLabel>
-                    </div>
-                    <br><br>
-                </form>
+      </div>
+    </div>
+  </div>
     
-                </div>
 
         <div class="palco">
-            <div class="centro">
-                <h1 style="color: black;">Criar usuario</h1>
-                <p-floatLabel>
-                    <input pInputText placeholder="Seu nome" id="nome" [(ngModel)]="usuario.nome" name="nome" required />
-                    <label>Nome</label>
-                </p-floatLabel>
-                <br><br>
-                <p-floatLabel>
-                    <input pInputText placeholder="Seu apelido" id="apelido" [(ngModel)]="usuario.apelido" name="apelido" required />
-                    <label>Apelido</label>
-                </p-floatLabel>
-                <br><br>
-                <p-floatLabel>
-                    <input pInputText placeholder="voce@gmail.com" id="email"[(ngModel)]="usuario.email" name="email" required />
-                    <label>E-mail</label>
-                </p-floatLabel>
-                <br><br>
-                <p-floatLabel >
-                    <p-inputMask class="input-data"
-                    [(ngModel)]="usuario.dataNascimento"
-                    mask="99-99-9999"
-                    placeholder="99/99/9999"
-                    />
-                    <label>Data de nascimento</label>
-                </p-floatLabel>
-                <br><br>
-                <p-floatLabel>
-                    <p-inputMask
-                    mask="999-999-999.99"
-                    [(ngModel)]="usuario.cpf"
-                    placeholder="999-999-999.99" />
-                    <label>CPF</label>
-                </p-floatLabel>
-                <br><br>
-                <p-floatLabel>
-                    <p-inputMask
-                    mask="(99)99999-9999"
-                    [(ngModel)]="usuario.telefone"
-                    placeholder="(99)99999-9999" />
-                    <label>Telefone</label>
-                </p-floatLabel>
-                <br><br>
-                <p-floatLabel>
-                    <p-password [(ngModel)]="usuario.senha">
-                        <ng-template pTemplate="header">
-                            <h6>Digite uma senha</h6>
-                        </ng-template>
-                        <ng-template pTemplate="footer">
-                            <p-divider />
-                            <p class="mt-2">Sugestões</p>
-                            <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
-                                <li>Ao menos uma letra minuscula</li>
-                                <li>Ao menos uma letra maiscula</li>
-                                <li>Ao menos uma numero</li>
-                                <li>Minimo 8 caracteres</li>
-                            </ul>
-                        </ng-template>
-                    </p-password>
-                    <label>Senha</label>
-                </p-floatLabel>
-                <br><br>
-    
-                <form (ngSubmit)="criarUsuario()">
-                        <button type="submit">Criar</button>
-                </form>
-            </div>
-</div>
+          <div class="centro">
+            <h1 style="color: black">Criar usuario</h1>
+            <p-floatLabel>
+              <input
+                pInputText
+                placeholder="Seu nome"
+                id="nome"
+                [(ngModel)]="usuario.nome"
+                name="nome"
+                required
+              />
+              <label>Nome</label>
+            </p-floatLabel>
+            <br /><br />
+            <p-floatLabel>
+              <input
+                pInputText
+                placeholder="Seu apelido"
+                id="apelido"
+                [(ngModel)]="usuario.apelido"
+                name="apelido"
+                required
+              />
+              <label>Apelido</label>
+            </p-floatLabel>
+            <br /><br />
+            <p-floatLabel>
+              <input
+                pInputText
+                placeholder="voce@gmail.com"
+                id="email"
+                [(ngModel)]="usuario.email"
+                name="email"
+                required
+              />
+              <label>E-mail</label>
+            </p-floatLabel>
+            <br /><br />
+            <p-floatLabel>
+              <p-inputMask
+                class="input-data"
+                [(ngModel)]="usuario.dataNascimento"
+                mask="99-99-9999"
+                placeholder="99/99/9999"
+              />
+              <label>Data de nascimento</label>
+            </p-floatLabel>
+            <br /><br />
+            <p-floatLabel>
+              <p-inputMask
+                mask="999-999-999.99"
+                [(ngModel)]="usuario.cpf"
+                placeholder="999-999-999.99"
+              />
+              <label>CPF</label>
+            </p-floatLabel>
+            <br /><br />
+            <p-floatLabel>
+              <p-inputMask
+                mask="(99)99999-9999"
+                [(ngModel)]="usuario.telefone"
+                placeholder="(99)99999-9999"
+              />
+              <label>Telefone</label>
+            </p-floatLabel>
+            <br /><br />
+            <p-floatLabel>
+              <p-password [(ngModel)]="usuario.senha">
+                <ng-template pTemplate="header">
+                  <h6>Digite uma senha</h6>
+                </ng-template>
+                <ng-template pTemplate="footer">
+                  <p-divider />
+                  <p class="mt-2">Sugestões</p>
+                  <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
+                    <li>Ao menos uma letra minuscula</li>
+                    <li>Ao menos uma letra maiscula</li>
+                    <li>Ao menos uma numero</li>
+                    <li>Minimo 8 caracteres</li>
+                  </ul>
+                </ng-template>
+              </p-password>
+              <label>Senha</label>
+            </p-floatLabel>
+            <br /><br />
+
+            <form (ngSubmit)="criarUsuario()">
+              <button type="submit">Criar</button>
+            </form>
+          </div>
+        </div>

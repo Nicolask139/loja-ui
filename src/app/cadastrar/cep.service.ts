@@ -11,13 +11,14 @@ export class CepService {
     private http: HttpClient){}
 
     consultaCEP(cep: string){
+      console.log(cep)
       if(cep !== ''){
-        const validaCEP = /^[0-9]{8}$/;
+        const validaCEP = /^[0-9]{5}-[0-9]{3}$/;
         if(validaCEP.test(cep)){
-          return this.http.get(`viacep.com.br/ws/${cep}/json/`)
+          console.log("oi")
+          return this.http.get(`https://viacep.com.br/ws/${cep}/json/`);
         }
       }
       return of({});
     }
-
 }

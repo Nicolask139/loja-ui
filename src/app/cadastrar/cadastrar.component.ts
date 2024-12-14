@@ -44,6 +44,10 @@ export class CadastrarComponent{
   };
   buscacep: string = '';
   buscar: boolean = false;
+  estado:string = '';
+  cidade:string = '';
+  bairro:string = '';
+  rua:string = '';
 
 
   constructor(
@@ -57,7 +61,7 @@ criarUsuario() {
 }
 
 buscarCEP(buscacep: any, form: any){
-  if(buscacep !== null&& buscacep!== '' && buscacep>= 8){
+  if (buscacep !== null && buscacep !== '' && buscacep.length === 9) {
     this.cepService.consultaCEP(buscacep).subscribe({
       next: (dados: any) => {
         this.buscar = true;
@@ -96,9 +100,4 @@ resetaCEPForm(formulario: any){
   })
   this.buscar = false;
 }
-
-
-
-
-
 }
