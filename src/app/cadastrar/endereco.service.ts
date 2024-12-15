@@ -2,19 +2,18 @@ import { MessageService } from 'primeng/api';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../enviroments/enviroment';
-import { Usuario } from './conta';
+import { Endereco } from './conta';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ContaService {
+export class EnderecoService {
 
   private apiUrl = `${environment.apiBaseUrl}/usuarios/cadastrar`; 
 
   constructor(private http: HttpClient, private messageService: MessageService) { }
-
-  criarUsuario(usuario: Usuario) {
-    this.http.post(this.apiUrl, usuario).subscribe({
+  criarEndereco(endereco: Endereco) {
+    this.http.post(this.apiUrl, endereco).subscribe({
       next: () => {
         this.messageService.add({
           severity: 'success',
@@ -37,6 +36,5 @@ export class ContaService {
         });
       }
     });
-    
   }
 }

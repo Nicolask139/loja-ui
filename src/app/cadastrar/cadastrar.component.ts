@@ -1,6 +1,7 @@
+import { EnderecoService } from './endereco.service';
 import { Component, OnInit } from '@angular/core';
 import { ContaService } from './conta.service';
-import { Usuario } from '../cadastrar/conta';
+import { Endereco, Usuario } from '../cadastrar/conta';
 import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { ButtonModule } from 'primeng/button';
@@ -33,6 +34,8 @@ import { MessageService } from 'primeng/api';
   styleUrl: './cadastrar.component.css'
 })
 export class CadastrarComponent{
+  buscar: boolean = false;
+
   usuario: Usuario = {
     nome: '',
     apelido: '',
@@ -42,43 +45,53 @@ export class CadastrarComponent{
     cpf: '',
     telefone: '',
   };
-  buscacep: string = '';
-  buscar: boolean = false;
-  estado:string = '';
-  cidade:string = '';
-  bairro:string = '';
-  rua:string = '';
 
+  endereco: Endereco={
+    cep: '',
+    pais: '',
+    estado:'',
+    cidade:'',
+    bairro:'',
+    rua:'',
+    numero: '',
+    complemento: ''
+  };
 
   constructor(
     private contaService: ContaService,
     private messageService: MessageService,
-    private cepService: CepService
+    private cepService: CepService,
+    private enderecoService: EnderecoService
 ) {}
 
 criarUsuario() {
   this.contaService.criarUsuario(this.usuario);
 }
 
-buscarCEP(buscacep: any, form: any){
-  if (buscacep !== null && buscacep !== '' && buscacep.length === 9) {
-    this.cepService.consultaCEP(buscacep).subscribe({
+criarEndereco() {
+  this.enderecoService.criarEndereco(this.endereco);
+}
+
+submeterFormulario(){
+  this.criarUsuario();
+  this.criarEndereco();
+}
+
+buscarCEP(cep: string, form: any) {
+  if (cep && cep.length === 9) {
+    this.cepService.consultaCEP(cep).subscribe({
       next: (dados: any) => {
-        this.buscar = true;
-        setTimeout(()=>{
-          this.populaCEPForm(dados,form);
-        },100);
+        this.populaCEPForm(dados, form);
       },
-      error:(e:any) => {
+      error: () => {
         this.resetaCEPForm(form);
-        this.buscar = false;
         this.messageService.add({
-          severity:'error',
-          summary:'Atenção',
+          severity: 'error',
+          summary: 'Atenção',
           detail: 'Erro ao buscar CEP!'
         });
       }
-    })
+    });
   }
 }
 

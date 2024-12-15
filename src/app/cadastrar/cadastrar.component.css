@@ -56,6 +56,11 @@
   button:hover{
     background-color: gray; 
   }
+
+  .buttoncep{
+    width: 40px;
+    height: 40px;
+  }
   
   .p-toast {
     font-family: 'Arial', sans-serif;
