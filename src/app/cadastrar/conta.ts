@@ -9,8 +9,8 @@ export interface Usuario {
 }
 
 export interface Endereco{
+  usuario: string;
   cep: string;
-  pais: string;
   estado: string;
   cidade: string;
   bairro: string;

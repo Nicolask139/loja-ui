@@ -14,9 +14,11 @@ export class LoginService {
   login(email: string, senha: string): void {
     const body = { email, senha };
   
-    this.http.post<{ token: string }>(this.apiUrl, body).subscribe({
+    this.http.post<{ token: string, id: string, email: string}>(this.apiUrl, body).subscribe({
       next: (response) => {  
         localStorage.setItem('authToken', response.token);
+        localStorage.setItem('authId', response.id);
+        localStorage.setItem('authEmail', response.email);
         this.messageService.add({
           severity: 'success',
           summary: 'Sucesso',

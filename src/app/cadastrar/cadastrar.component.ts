@@ -1,5 +1,5 @@
 import { EnderecoService } from './endereco.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, PLATFORM_ID, OnInit } from '@angular/core';
 import { ContaService } from './conta.service';
 import { Endereco, Usuario } from '../cadastrar/conta';
 import { InputTextModule } from 'primeng/inputtext';
@@ -10,7 +10,7 @@ import { InputMaskModule } from 'primeng/inputmask';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PasswordModule } from 'primeng/password';
 import { DividerModule } from 'primeng/divider';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { CepService } from './cep.service';
 import { MessageService } from 'primeng/api';
 
@@ -29,12 +29,12 @@ import { MessageService } from 'primeng/api';
     DividerModule,
     CommonModule
 ],
-  providers: [MessageService],
   templateUrl: './cadastrar.component.html',
   styleUrl: './cadastrar.component.css'
 })
 export class CadastrarComponent{
   buscar: boolean = false;
+  mensagem: string = '';
 
   usuario: Usuario = {
     nome: '',
@@ -47,8 +47,8 @@ export class CadastrarComponent{
   };
 
   endereco: Endereco={
+    usuario: '',
     cep: '',
-    pais: '',
     estado:'',
     cidade:'',
     bairro:'',
@@ -58,24 +58,44 @@ export class CadastrarComponent{
   };
 
   constructor(
-    private contaService: ContaService,
+    @Inject(PLATFORM_ID) private platformId: Object,
     private messageService: MessageService,
+    private contaService: ContaService,
     private cepService: CepService,
     private enderecoService: EnderecoService
 ) {}
 
-criarUsuario() {
+ngOnInit(): void {
+  if (isPlatformBrowser(this.platformId)) {  
+    this.endereco.usuario = localStorage.getItem('authId') || '';  
+    console.log(this.endereco.usuario)
+  }
+}
+
+criarUsuario(){
   this.contaService.criarUsuario(this.usuario);
 }
 
-criarEndereco() {
+criarEndereco(){
   this.enderecoService.criarEndereco(this.endereco);
+  console.log(this.endereco)
 }
 
-submeterFormulario(){
-  this.criarUsuario();
-  this.criarEndereco();
+cadastrar(): void {
+  this.contaService.cadastroUsuario(this.usuario).subscribe({
+    next: (response) => {
+
+      this.mensagem = `Usuário cadastrado com sucesso! ID: ${response.idUsuario}`;
+      console.log("Chego aqui")
+      console.log(response); 
+    },
+    error: (err) => {
+      this.mensagem = 'Erro ao cadastrar usuário.';
+      console.error(err);
+    }
+  });
 }
+
 
 buscarCEP(cep: string, form: any) {
   if (cep && cep.length === 9) {

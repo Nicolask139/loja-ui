@@ -9,7 +9,7 @@ import { Endereco } from './conta';
 })
 export class EnderecoService {
 
-  private apiUrl = `${environment.apiBaseUrl}/usuarios/cadastrar`; 
+  private apiUrl = `${environment.apiBaseUrl}/usuarios/endereco`; 
 
   constructor(private http: HttpClient, private messageService: MessageService) { }
   criarEndereco(endereco: Endereco) {
@@ -18,14 +18,14 @@ export class EnderecoService {
         this.messageService.add({
           severity: 'success',
           summary: 'Sucesso',
-          detail: 'Usuário cadastrado com sucesso.'
+          detail: 'Endereço cadastrado com sucesso.'
         });
       },
       error: (error) => {
         this.messageService.add({
           severity: 'error',
           summary: 'Erro',
-          detail: error.error?.message || 'Erro inesperado. Tente novamente.'
+          detail: error.error?.message || 'Complete todos os campos.'
         });
       },
       complete: () => {
