@@ -1,208 +1,224 @@
-<app-header/>
+<app-header />
 
 <div class="opcoes">
-    <a routerLink="" fragment="home">HOME</a>
-    <a routerLink="" fragment="velas">VELAS</a>
-    <a routerLink="" fragment="fragrancias">FRAGRÂNCIAS</a>
-    <a routerLink="" fragment="artesanatos">ARTESANATOS</a>
-    <a routerLink="" fragment="decoracoes">DECORAÇÔES</a>
-    <a routerLink="" fragment="sobre">SOBRE</a>
+  <a routerLink="" fragment="home">HOME</a>
+  <a routerLink="" fragment="velas">VELAS</a>
+  <a routerLink="" fragment="fragrancias">FRAGRÂNCIAS</a>
+  <a routerLink="" fragment="artesanatos">ARTESANATOS</a>
+  <a routerLink="" fragment="decoracoes">DECORAÇÔES</a>
+  <a routerLink="" fragment="sobre">SOBRE</a>
 </div>
 
 <section id="home">
-<div class="opcoes">
-
-    <input type="text" placeholder="Pesquisar produtos...">
-
+  <div class="opcoes">
+    <input type="text" placeholder="Pesquisar produtos..." />
+  </div>
+  <button *ngIf="showBackToTop" (click)="scrollToTop()" id="myBtn">
+    <a href="#top" style="color: white"></a><i class="pi pi-arrow-up"></i>
+  </button>
+  <br />
+  <div class="linha-com-texto">
+    <div>
+        <h1>Destaques da Loja!!</h1>
+    </div>
 </div>
-    <button *ngIf="showBackToTop" (click)="scrollToTop()" id="myBtn"><a href="#top" style="color: white"></a><i class="pi pi-arrow-up "></i></button>
-    <br>
-    <div class="linha-com-texto">Destaques</div>
-    <br>
-    <div class="imagem"></div>
-    <br>
+  <br />
+  <div class="imagem"></div>
+  <br />
 </section>
 <section id="velas">
-    <div class="linha-com-texto">Linha de Velas</div>
-<br>
-
-<div class="container" *ngFor="let produto of produtos">
+  <div class="linha-com-texto">
+    <div>
+      <h1>Linha de Velas</h1>
+      <p>Ver toda linha -></p>
+    </div>
+  </div>
+  <div class="container" *ngFor="let produto of produtos">
     <div class="carrosel">
-        <div class="divImagem">
-            <img [src]="produto.imagemUrl" alt="a" width="100%">
-        </div>
-        <div class="divComprar">
-            <h1>{{produto.nome}}</h1>
-            <p>Valor: R${{produto.preco}}</p>
-        </div>
-        <div class="divBotao">
-            <button class="full-width-button">Comprar</button>
-        </div>
+      <div class="divImagem">
+        <img [src]="produto.imagemUrl" alt="a" width="100%" />
+      </div>
+      <div class="divComprar">
+        <h1>{{ produto.nome }}</h1>
+        <p>Valor: R${{ produto.preco }}</p>
+      </div>
+      <div class="divBotao">
+        <button class="full-width-button" (click)="navigateToProduto()">Ver produto</button>
+      </div>
     </div>
     <div class="carrosel">
-        <div class="divImagem">
-            <img [src]="produto.imagemUrl" alt="a" width="100%">
-        </div>
-        <div class="divComprar">
-            <h1>{{produto.nome}}</h1>
-            <p>Valor: R${{produto.preco}}</p>
-        </div>
-        <div class="divBotao">
-            <button class="full-width-button">Comprar</button>
-        </div>
+      <div class="divImagem">
+        <img [src]="produto.imagemUrl" alt="a" width="100%" />
+      </div>
+      <div class="divComprar">
+        <h1>{{ produto.nome }}</h1>
+        <p>Valor: R${{ produto.preco }}</p>
+      </div>
+      <div class="divBotao">
+        <button class="full-width-button" (click)="navigateToProduto()">Ver produto</button>
+      </div>
     </div>
     <div class="carrosel">
-        <div class="divImagem">
-            <img [src]="produto.imagemUrl" alt="a" width="100%">
-        </div>
-        <div class="divComprar">
-            <h1>{{produto.nome}}</h1>
-            <p>Valor: R${{produto.preco}}</p>
-        </div>
-        <div class="divBotao">
-            <button class="full-width-button">Comprar</button>
-        </div>
+      <div class="divImagem">
+        <img [src]="produto.imagemUrl" alt="a" width="100%" />
+      </div>
+      <div class="divComprar">
+        <h1>{{ produto.nome }}</h1>
+        <p>Valor: R${{ produto.preco }}</p>
+      </div>
+      <div class="divBotao">
+        <button class="full-width-button" (click)="navigateToProduto()">Ver produto</button>
+      </div>
     </div>
-</div>
-<p style="padding-left: 60px;">Ver toda linha -></p>
-
-<br>
+  </div>
+  <br />
 </section>
 <section id="fragrancias">
-    <div class="linha-com-texto">Linha de Fragrâncias</div>
-    <br>
-    <div class="container" *ngFor="let produto of produtos">
-        <div class="carrosel">
-            <div class="divImagem">
-                <img [src]="produto.imagemUrl" alt="a" width="100%">
-            </div>
-            <div class="divComprar">
-                <h1>{{produto.nome}}</h1>
-                <p>Valor: R${{produto.preco}}</p>
-            </div>
-            <div class="divBotao">
-                <button class="full-width-button">Comprar</button>
-            </div>
-        </div>
-        <div class="carrosel">
-            <div class="divImagem">
-                <img [src]="produto.imagemUrl" alt="a" width="100%">
-            </div>
-            <div class="divComprar">
-                <h1>{{produto.nome}}</h1>
-                <p>Valor: R${{produto.preco}}</p>
-            </div>
-            <div class="divBotao">
-                <button class="full-width-button">Comprar</button>
-            </div>
-        </div>
-        <div class="carrosel">
-            <div class="divImagem">
-                <img [src]="produto.imagemUrl" alt="a" width="100%">
-            </div>
-            <div class="divComprar">
-                <h1>{{produto.nome}}</h1>
-                <p>Valor: R${{produto.preco}}</p>
-            </div>
-            <div class="divBotao">
-                <button class="full-width-button">Comprar</button>
-            </div>
-        </div>
+  <div class="linha-com-texto">
+    <div>
+      <h1>Linha de Fragrâncias</h1>
+      <p>Ver toda linha -></p>
     </div>
-    <p style="padding-left: 60px;">Ver toda linha -></p>
-<br>
+  </div>
+  <br />
+  <div class="container" *ngFor="let produto of produtos">
+    <div class="carrosel">
+      <div class="divImagem">
+        <img [src]="produto.imagemUrl" alt="a" width="100%" />
+      </div>
+      <div class="divComprar">
+        <h1>{{ produto.nome }}</h1>
+        <p>Valor: R${{ produto.preco }}</p>
+      </div>
+      <div class="divBotao">
+        <button class="full-width-button" (click)="navigateToProduto()">Ver produto</button>
+      </div>
+    </div>
+    <div class="carrosel">
+      <div class="divImagem">
+        <img [src]="produto.imagemUrl" alt="a" width="100%" />
+      </div>
+      <div class="divComprar">
+        <h1>{{ produto.nome }}</h1>
+        <p>Valor: R${{ produto.preco }}</p>
+      </div>
+      <div class="divBotao">
+        <button class="full-width-button" (click)="navigateToProduto()">Ver produto</button>
+      </div>
+    </div>
+    <div class="carrosel">
+      <div class="divImagem">
+        <img [src]="produto.imagemUrl" alt="a" width="100%" />
+      </div>
+      <div class="divComprar">
+        <h1>{{ produto.nome }}</h1>
+        <p>Valor: R${{ produto.preco }}</p>
+      </div>
+      <div class="divBotao">
+        <button class="full-width-button" (click)="navigateToProduto()">Ver produto</button>
+      </div>
+    </div>
+  </div>
+  <br />
 </section>
 <section id="artesanatos">
-    <div class="linha-com-texto">Linha de Artesanatos</div>
-    <br>
-    <div class="container" *ngFor="let produto of produtos">
-        <div class="carrosel">
-            <div class="divImagem">
-                <img [src]="produto.imagemUrl" alt="a" width="100%">
-            </div>
-            <div class="divComprar">
-                <h1>{{produto.nome}}</h1>
-                <p>Valor: R${{produto.preco}}</p>
-            </div>
-            <div class="divBotao">
-                <button class="full-width-button">Comprar</button>
-            </div>
-        </div>
-        <div class="carrosel">
-            <div class="divImagem">
-                <img [src]="produto.imagemUrl" alt="a" width="100%">
-            </div>
-            <div class="divComprar">
-                <h1>{{produto.nome}}</h1>
-                <p>Valor: R${{produto.preco}}</p>
-            </div>
-            <div class="divBotao">
-                <button class="full-width-button">Comprar</button>
-            </div>
-        </div>
-        <div class="carrosel">
-            <div class="divImagem">
-                <img [src]="produto.imagemUrl" alt="a" width="100%">
-            </div>
-            <div class="divComprar">
-                <h1>{{produto.nome}}</h1>
-                <p>Valor: R${{produto.preco}}</p>
-            </div>
-            <div class="divBotao">
-                <button class="full-width-button">Comprar</button>
-            </div>
-        </div>
+  <div class="linha-com-texto">
+    <div>
+      <h1>Linha de Artesanatos</h1>
+      <p>Ver toda linha -></p>
     </div>
-    <p style="padding-left: 60px;">Ver toda linha -></p>
-    <br>
+  </div>
+  <br />
+  <div class="container" *ngFor="let produto of produtos">
+    <div class="carrosel">
+      <div class="divImagem">
+        <img [src]="produto.imagemUrl" alt="a" width="100%" />
+      </div>
+      <div class="divComprar">
+        <h1>{{ produto.nome }}</h1>
+        <p>Valor: R${{ produto.preco }}</p>
+      </div>
+      <div class="divBotao">
+        <button class="full-width-button" (click)="navigateToProduto()">Ver produto</button>
+      </div>
+    </div>
+    <div class="carrosel">
+      <div class="divImagem">
+        <img [src]="produto.imagemUrl" alt="a" width="100%" />
+      </div>
+      <div class="divComprar">
+        <h1>{{ produto.nome }}</h1>
+        <p>Valor: R${{ produto.preco }}</p>
+      </div>
+      <div class="divBotao">
+        <button class="full-width-button" (click)="navigateToProduto()">Ver produto</button>
+      </div>
+    </div>
+    <div class="carrosel">
+      <div class="divImagem">
+        <img [src]="produto.imagemUrl" alt="a" width="100%" />
+      </div>
+      <div class="divComprar">
+        <h1>{{ produto.nome }}</h1>
+        <p>Valor: R${{ produto.preco }}</p>
+      </div>
+      <div class="divBotao">
+        <button class="full-width-button" (click)="navigateToProduto()">Ver produto</button>
+      </div>
+    </div>
+  </div>
+  <br />
 </section>
 <section id="decoracoes">
-    <div class="linha-com-texto">Linha de Decorações</div>
-    <br>
-    <div class="container" *ngFor="let produto of produtos">
-        <div class="carrosel">
-            <div class="divImagem">
-                <img [src]="produto.imagemUrl" alt="a" width="100%">
-            </div>
-            <div class="divComprar">
-                <h1>{{produto.nome}}</h1>
-                <p>Valor: R${{produto.preco}}</p>
-            </div>
-            <div class="divBotao">
-                <button class="full-width-button">Comprar</button>
-            </div>
-        </div>
-        <div class="carrosel">
-            <div class="divImagem">
-                <img [src]="produto.imagemUrl" alt="a" width="100%">
-            </div>
-            <div class="divComprar">
-                <h1>{{produto.nome}}</h1>
-                <p>Valor: R${{produto.preco}}</p>
-            </div>
-            <div class="divBotao">
-                <button class="full-width-button">Comprar</button>
-            </div>
-        </div>
-        <div class="carrosel">
-            <div class="divImagem">
-                <img [src]="produto.imagemUrl" alt="a" width="100%">
-            </div>
-            <div class="divComprar">
-                <h1>{{produto.nome}}</h1>
-                <p>Valor: R${{produto.preco}}</p>
-            </div>
-            <div class="divBotao">
-                <button class="full-width-button">Comprar</button>
-            </div>
-        </div>
+  <div class="linha-com-texto">
+    <div>
+      <h1>Linha de Decorações</h1>
+      <p>Ver toda linha -></p>
     </div>
-    <p style="padding-left: 60px;">Ver toda linha -></p>
-    <br>
-    <br>
+  </div>
+  <br />
+  <div class="container" *ngFor="let produto of produtos">
+    <div class="carrosel">
+      <div class="divImagem">
+        <img [src]="produto.imagemUrl" alt="a" width="100%" />
+      </div>
+      <div class="divComprar">
+        <h1>{{ produto.nome }}</h1>
+        <p>Valor: R${{ produto.preco }}</p>
+      </div>
+      <div class="divBotao">
+        <button class="full-width-button" (click)="navigateToProduto()">Ver produto</button>
+      </div>
+    </div>
+    <div class="carrosel">
+      <div class="divImagem">
+        <img [src]="produto.imagemUrl" alt="a" width="100%" />
+      </div>
+      <div class="divComprar">
+        <h1>{{ produto.nome }}</h1>
+        <p>Valor: R${{ produto.preco }}</p>
+      </div>
+      <div class="divBotao">
+        <button class="full-width-button" (click)="navigateToProduto()">Ver produto</button>
+      </div>
+    </div>
+    <div class="carrosel">
+      <div class="divImagem">
+        <img [src]="produto.imagemUrl" alt="a" width="100%" />
+      </div>
+      <div class="divComprar">
+        <h1>{{ produto.nome }}</h1>
+        <p>Valor: R${{ produto.preco }}</p>
+      </div>
+      <div class="divBotao">
+        <button class="full-width-button" (click)="navigateToProduto()">Ver produto</button>
+      </div>
+    </div>
+  </div>
+
+  <br />
+  <br />
 </section>
 <section id="sobre">
-<app-footer/>
+  <app-footer />
 </section>
-
-

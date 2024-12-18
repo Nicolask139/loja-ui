@@ -85,16 +85,20 @@
   object-fit: cover; 
 }
 
+.linha-com-texto h1,p{
+  margin: 0;
+}
+
 .linha-com-texto {
+  padding: 50px, 0px, 50px;
   display: flex;
   align-items: center;
   text-align: center;
   margin: 20px 0;
   color: #ffb222;
   font-family: "Cormorant Garamond", serif;
-  font-weight: 900;
   font-style: italic;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .linha-com-texto::before,
@@ -216,6 +220,7 @@ input[type="text"]:focus {
   background-color: #ffb222;
   padding: .5px;
   border-radius: 100px;
+  cursor: pointer;
 
 }
 

@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { HeaderComponent } from "../header/header.component";
 import { FooterComponent } from "../footer/footer.component";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-loja',
@@ -25,7 +26,10 @@ export class LojaComponent implements OnInit {
   produtos: any;
   showBackToTop = false;
 
-  constructor(private LojaService: LojaService) {}
+  constructor(
+    private LojaService: LojaService,
+    private router: Router
+  ){}
 
   ngOnInit(): void {
 
@@ -61,5 +65,11 @@ export class LojaComponent implements OnInit {
   
   scrollToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  navigateToProduto(){
+    this.router.navigate(['/produto']).then(() => {
+      window.scrollTo(0,0);
+    });
   }
 }

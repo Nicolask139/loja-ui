@@ -10,8 +10,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PasswordModule } from 'primeng/password';
 import { DividerModule } from 'primeng/divider';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from "../header/header.component";
-import { FooterComponent } from "../footer/footer.component";
 
 @Component({
   selector: 'app-login',
@@ -28,8 +26,6 @@ import { FooterComponent } from "../footer/footer.component";
     FloatLabelModule,
     DividerModule,
     CommonModule,
-    HeaderComponent,
-    FooterComponent
 ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'

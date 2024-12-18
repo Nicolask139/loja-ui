@@ -6,13 +6,13 @@
         <a class="redes" href=""><img src="call.png" alt="" height="25px"></a>
         <p style="padding-left: 40px;">Nos visite! ^</p>
     </div>
-    <div class="meio">
+    <div class="meio" (click)="navigateToLoja()">
         <h1>Sisal de cetim</h1>
         <p>Artesanais</p>
     </div>
-    <div class="direita">
-        <p class="conta">Minha conta</p>
-        <p>Carrinho:</p>
-        <p>R$0.00</p>
+    <div class="direita" >
+        <p class="conta" (click)="navigateToConta()" >Minha Conta</p>
+        <p class="carrinho" (click)="navigateToCarrinho()">Carrinho:</p>
+        <p> R$0.00</p>
     </div>
 </div>

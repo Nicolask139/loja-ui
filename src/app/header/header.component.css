@@ -31,6 +31,15 @@
 
 .conta{
     padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+.carrinho{
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .meio{
@@ -48,4 +57,8 @@
 
 .direita{
     text-align: end;
+}
+
+.meio{
+cursor: pointer;
 }
