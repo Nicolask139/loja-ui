@@ -23,7 +23,10 @@ import { Router } from '@angular/router';
 export class LojaComponent implements OnInit {
 
   activeRoute : ActivatedRoute = inject(ActivatedRoute);
-  produtos: any;
+  velas: any;
+  fragrancias: any;
+  artesanatos: any;
+  decoracoes: any;
   showBackToTop = false;
 
   constructor(
@@ -33,18 +36,48 @@ export class LojaComponent implements OnInit {
 
   ngOnInit(): void {
 
+  this.LojaService.getDadosVelas().subscribe({
+    next: (response) => {
+      this.velas = response; 
+      
+    },
+    error: (err) => {
+      console.error('Erro ao obter os dados:', err); 
+    },
+  });
+
+  this.LojaService.getDadosFragrancias().subscribe({
+    next: (response) => {
+      this.fragrancias = response; 
+      
+    },
+    error: (err) => {
+      console.error('Erro ao obter os dados:', err); 
+    },
+  });
+
+  this.LojaService.getDadosArtesanatos().subscribe({
+    next: (response) => {
+      this.artesanatos = response; 
+      
+    },
+    error: (err) => {
+      console.error('Erro ao obter os dados:', err); 
+    },
+  });
+
+  this.LojaService.getDadosDecoracoes().subscribe({
+    next: (response) => {
+      this.decoracoes = response; 
+      
+    },
+    error: (err) => {
+      console.error('Erro ao obter os dados:', err); 
+    },
+  });
+
     this.activeRoute.fragment.subscribe((data: string | null) => {
     this.JumpToSection(data);
-    });
-
-    this.LojaService.getDados().subscribe({
-      next: (response) => {
-        this.produtos = response; 
-        
-      },
-      error: (err) => {
-        console.error('Erro ao obter os dados:', err); 
-      },
     });
   }
 

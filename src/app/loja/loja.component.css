@@ -149,11 +149,6 @@ input[type="text"]:focus {
   border-radius: 10px; 
 }
 
-.divImagem img {
-  width: 100%; 
-  object-fit: cover; 
-}
-
 .divComprar h1{
   color: white;
 }
@@ -166,6 +161,11 @@ input[type="text"]:focus {
   flex: 0 0 60%; 
   align-items: center;
   justify-content: center;
+}
+
+.divImagem img {
+  width: 100%; 
+  object-fit: cover; 
 }
 
 .divComprar {

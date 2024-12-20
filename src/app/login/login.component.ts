@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginService } from '../login/login.service';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { ButtonModule } from 'primeng/button';
@@ -37,6 +37,7 @@ export class LoginComponent {
 
   constructor(
     private loginService: LoginService,
+    private router: Router
   ) {}
   realizarLogin() {
     this.loginService.login(this.email, this.senha);

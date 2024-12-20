@@ -5,7 +5,6 @@ import { environment } from '../../enviroments/enviroment';
 import { Usuario } from './conta';
 import { Observable } from 'rxjs';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -13,7 +12,11 @@ export class ContaService {
 
   private apiUrl = `${environment.apiBaseUrl}/usuarios/cadastrar`; 
 
-  constructor(private http: HttpClient, private messageService: MessageService) { }
+  constructor(
+    private http: HttpClient, 
+    private messageService: MessageService
+  ) 
+    { }
 
   criarUsuario(usuario: Usuario) {
   

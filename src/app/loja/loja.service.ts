@@ -9,12 +9,24 @@ import { Observable } from 'rxjs';
 })
 export class LojaService {
 
-  private apiUrl = `${environment.apiBaseUrl}/produtos/carrosel`;
+  private apiUrlVelas = `${environment.apiBaseUrl}/produtos/allVelas`;
+  private apiUrlFragrancias = `${environment.apiBaseUrl}/produtos/allFragrancias`;
+  private apiUrlArtesanatos = `${environment.apiBaseUrl}/produtos/allArtesanatos`;
+  private apiUrlDecoracoes = `${environment.apiBaseUrl}/produtos/allDecoracoes`;
 
   constructor(private http: HttpClient, private messageService: MessageService) {}
 
-  getDados(): Observable<any>{
-    return this.http.get<any>(this.apiUrl);
+  getDadosVelas(): Observable<any>{
+    return this.http.get<any>(this.apiUrlVelas);
+  }
+  getDadosFragrancias(): Observable<any>{
+    return this.http.get<any>(this.apiUrlFragrancias);
+  }
+  getDadosArtesanatos(): Observable<any>{
+    return this.http.get<any>(this.apiUrlArtesanatos);
+  }
+  getDadosDecoracoes(): Observable<any>{
+    return this.http.get<any>(this.apiUrlDecoracoes);
   }
 
 }

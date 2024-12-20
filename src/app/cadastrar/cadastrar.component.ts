@@ -13,6 +13,7 @@ import { DividerModule } from 'primeng/divider';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { CepService } from './cep.service';
 import { MessageService } from 'primeng/api';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastrar',
@@ -62,7 +63,8 @@ export class CadastrarComponent{
     private messageService: MessageService,
     private contaService: ContaService,
     private cepService: CepService,
-    private enderecoService: EnderecoService
+    private enderecoService: EnderecoService,
+    private router: Router
 ) {}
 
 ngOnInit(): void {
@@ -73,12 +75,15 @@ ngOnInit(): void {
 }
 
 criarUsuario(){
-  this.contaService.criarUsuario(this.usuario);
+    this.contaService.criarUsuario(this.usuario);
 }
 
 criarEndereco(){
   this.enderecoService.criarEndereco(this.endereco);
-  console.log(this.endereco)
+}
+
+navigateToLoja(){
+  this.router.navigate(['']);
 }
 
 cadastrar(): void {

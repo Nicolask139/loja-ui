@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { Injectable } from '@angular/core';
 import { environment } from '../../enviroments/enviroment';
@@ -9,7 +10,10 @@ import { HttpClient } from '@angular/common/http';
 export class LoginService {
   private apiUrl = `${environment.apiBaseUrl}/usuarios/login`;
 
-  constructor(private http: HttpClient, private messageService: MessageService) {}
+  constructor(
+    private http: HttpClient, 
+    private messageService: MessageService,
+    private router: Router) {}
 
   login(email: string, senha: string): void {
     const body = { email, senha };
@@ -24,6 +28,9 @@ export class LoginService {
           summary: 'Sucesso',
           detail: 'Login realizado com sucesso.',
         });
+        setTimeout(() => {
+          this.router.navigate(['']);
+        }, 2000);
       },
       error: (error) => {   
         this.messageService.add({
