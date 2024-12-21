@@ -1,3 +1,4 @@
+<p-toast position="top-right" [hideTransitionOptions]="'1000ms'" ></p-toast>
 <div class="header">
     <div class="esquerda">
         <a class="redes" href=""><img src="facebook.png" alt="" height="25px"></a>
@@ -12,7 +13,7 @@
     </div>
     <div class="direita" >
         <p class="conta" (click)="navigateToConta()" >Minha Conta</p>
-        <p class="carrinho" (click)="navigateToCarrinho()">Carrinho:</p>
+        <p class="carrinho" (click)="checkAuthTokenAndAccess()">Carrinho:</p>
         <p> R$0.00</p>
     </div>
 </div>

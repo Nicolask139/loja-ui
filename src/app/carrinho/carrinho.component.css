@@ -10,7 +10,8 @@
 .carrinho{
     height: 1000px;
     width: 600px;
-    background-color: aliceblue;
+    background-color: rgb(216, 202, 255);
+    border: 2px solid black;
     border-radius: 20px;
 }
 
@@ -41,13 +42,12 @@
 }
   
 .full-width-button {
-
     height: 60px;
     width: 200px;
     font-family: "Cormorant Garamond", serif;
     background-color: white;
     color: #000; 
-    border: none; 
+    border: 2px solid black;
     border-radius: 5px; 
     font-size: 25px; 
     cursor: pointer; 

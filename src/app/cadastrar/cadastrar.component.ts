@@ -1,5 +1,5 @@
 import { EnderecoService } from './endereco.service';
-import { Component, Inject, PLATFORM_ID, OnInit } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { ContaService } from './conta.service';
 import { Endereco, Usuario } from '../cadastrar/conta';
 import { InputTextModule } from 'primeng/inputtext';

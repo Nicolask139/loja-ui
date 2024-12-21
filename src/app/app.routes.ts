@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 
-
 export const routes: Routes = [
       {
         path: 'contau', 
@@ -25,7 +24,6 @@ export const routes: Routes = [
       {
         path: 'produto', 
         loadComponent: () =>
-          
           import('./produto/produto.component').then((m) => m.ProdutoComponent),
-      }
+      },
     ];

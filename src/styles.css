@@ -3,10 +3,8 @@
 @import "primeng/resources/primeng.css";
 
 body {
-    background-image: url('/parede.webp'); 
-    margin: 0;
-    background-repeat: repeat; /* Permite a repetição da imagem */
-    background-size: 850px 850px; /* Ajusta o tamanho da imagem repetida */
-    padding: 0;
+  background-color: aliceblue;
+  padding: 0%;
+  margin: 0%;
   }
   
