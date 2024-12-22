@@ -1,17 +1,38 @@
 
 <div class="opcoes">
-    <a routerLink="" fragment="home">HOME</a>
-    <a routerLink="" fragment="velas">VELAS</a>
-    <a routerLink="" fragment="fragrancias">FRAGRÂNCIAS</a>
-    <a routerLink="" fragment="artesanatos">ARTESANATOS</a>
-    <a routerLink="" fragment="decoracoes">DECORAÇÔES</a>
+  <div class="divPai">
+    <a routerLink="" fragment="home">HOME</a> 
+  </div>
+  <div class="divPai">
+    <a class="menuVelas" (click)="toggleMenuVelas($event)">LINHA VELAS</a>
+    <div class="dropdownVelas" [ngClass]="{'show': isMenuVisibleVelas}">
+      <a href="#opcao1">Opção 1</a>
+      <a href="#opcao2">Opção 2</a>
+      <a href="#opcao3">Opção 3</a>
+    </div>
+  </div>
+  <div class="divPai">
+    <a class="menuAromatizadores" (click)="toggleMenuAromatizadores($event)">LINHA AROMATIZADORES</a>
+    <div class="dropdownAroma" [ngClass]="{'show': isMenuVisibleAromatizadores}">
+      <a href="#opcao1">Opção 1</a>
+      <a href="#opcao2">Opção 2</a>
+      <a href="#opcao3">Opção 3</a>
+    </div>
+  </div>
+  <div class="divPai">
+    <a class="menuDecoracoes" (click)="toggleMenuDecoracoes($event)">LINHA DECORAÇÔES</a>
+    <div class="dropdownDeco" [ngClass]="{'show': isMenuVisibleDecoracoes}">
+      <a href="#opcao1">Opção 1</a>
+      <a href="#opcao2">Opção 2</a>
+      <a href="#opcao3">Opção 3</a>
+    </div>
+  </div>
+  <div class="divPai">
     <a routerLink="" fragment="sobre">SOBRE</a>
   </div>
+</div>
   
   <section id="home">
-
-
-
     <button *ngIf="showBackToTop" (click)="scrollToTop()" id="myBtn">
       <a href="#top" style="color: white"></a><i class="pi pi-arrow-up"></i>
     </button>

@@ -1,6 +1,6 @@
 .header {
     display: flex;
-    background-color: #000000;
+    background-color:  rgb(194, 161, 118);
     padding: 40px;
     margin: 0px;
     border: 0px;
@@ -12,22 +12,33 @@
     font-family: "Cormorant Garamond", serif;
     font-weight: 400;
     font-style: italic;
-    padding: 0px 0px 0px 60px;
     margin: 0px;
     color: #ffc04a;
 }
 
 .header p {
+    position: relative;
     font-family: "Cormorant Garamond", serif;
-    font-weight: 400;
+    font-weight: 700;
+    font-size: 25px;
     font-style: italic;
-    margin: 0px;
-    color: #ffb222;
+    color: white;
 }
 
-.meio p{
-    padding: 0px 0px 0px 60px;
-}
+.header p::after {
+    content: ""; 
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px; 
+    background-color: white; 
+    transition: width 0.3s ease; 
+  }
+  
+.header p:hover::after {
+    width: 100%; 
+  }
 
 .conta{
     padding-right: 30px;
@@ -36,29 +47,30 @@
     cursor: pointer;
 }
 
-.carrinho{
-    cursor: pointer;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.meio{
-    text-align: center;
-    flex-grow: 1;
+.esquerda{
+    flex: 20%;
 }
 
 .esquerda img{
     padding-left: 10px;
 }
 
-.direita p{
-    display: inline;
+.meio{
+    flex: 60%;
+    cursor: pointer;
+    text-align: center;
 }
 
+
 .direita{
+    flex: 20%;
     text-align: end;
 }
 
-.meio{
-cursor: pointer;
+
+.direita p{
+    display: inline;
+    padding: 0px;
 }
+
+
