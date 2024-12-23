@@ -25,6 +25,7 @@
 
 .divPai {
   height: 25px;
+  display: inline-block; /* Impede quebra de linha entre os links */
 }
 
 .dropdownVelas,

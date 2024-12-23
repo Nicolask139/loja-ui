@@ -29,6 +29,11 @@ export class DestaqueComponent implements OnInit{
   isMenuVisibleVelas = false;
   isMenuVisibleDecoracoes = false;
   isMenuVisibleAromatizadores = false;
+  velasTimeout: any;
+  aromatizadoresTimeout: any; 
+  decoracoesTimeout: any; 
+  hideTimeout: any; 
+
 
   constructor(
     private DestaqueService: DestaqueService,
@@ -76,6 +81,41 @@ export class DestaqueComponent implements OnInit{
     if (menu && !menu.contains(target) && target !== link) {
       this.isMenuVisibleDecoracoes = false; 
     }
+  }
+
+  showMenuVelas(): void {
+    clearTimeout(this.velasTimeout); // Cancela o temporizador de ocultar
+    this.isMenuVisibleVelas = true; // Mostra o menu
+  }
+
+  hideMenuVelas(): void {
+    this.velasTimeout = setTimeout(() => {
+      this.isMenuVisibleVelas = false; // Oculta o menu após o delay
+    }, 300);
+  }
+
+  // Métodos para Aromatizadores
+  showMenuAromatizadores(): void {
+    clearTimeout(this.aromatizadoresTimeout);
+    this.isMenuVisibleAromatizadores = true;
+  }
+
+  hideMenuAromatizadores(): void {
+    this.aromatizadoresTimeout = setTimeout(() => {
+      this.isMenuVisibleAromatizadores = false;
+    }, 300);
+  }
+
+  // Métodos para Decorações
+  showMenuDecoracoes(): void {
+    clearTimeout(this.decoracoesTimeout);
+    this.isMenuVisibleDecoracoes = true;
+  }
+
+  hideMenuDecoracoes(): void {
+    this.decoracoesTimeout = setTimeout(() => {
+      this.isMenuVisibleDecoracoes = false;
+    }, 300);
   }
 
   ngOnInit(): void {

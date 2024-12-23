@@ -1,32 +1,41 @@
-
 <div class="opcoes">
   <div class="divPai">
-    <a routerLink="" fragment="home">HOME</a> 
+    <a routerLink="" fragment="home">HOME</a>
   </div>
-  <div class="divPai">
-    <a class="menuVelas" (click)="toggleMenuVelas($event)">LINHA VELAS</a>
+
+  <div class="divPai"
+       (mouseover)="showMenuVelas()"
+       (mouseout)="hideMenuVelas()">
+    <a class="menuVelas">LINHA VELAS</a>
     <div class="dropdownVelas" [ngClass]="{'show': isMenuVisibleVelas}">
-      <a href="#opcao1">Opção 1</a>
-      <a href="#opcao2">Opção 2</a>
-      <a href="#opcao3">Opção 3</a>
+      <a href="#opcao1">VELAS PERFUMADAS</a>
+      <a href="#opcao2">VELAS DECORAÇÔES</a>
+      <a href="#opcao3">VELAS LUMINARIAS</a>
     </div>
   </div>
-  <div class="divPai">
-    <a class="menuAromatizadores" (click)="toggleMenuAromatizadores($event)">LINHA AROMATIZADORES</a>
+
+  <div class="divPai"
+       (mouseover)="showMenuAromatizadores()"
+       (mouseout)="hideMenuAromatizadores()">
+    <a class="menuAromatizadores">LINHA AROMATIZADORES</a>
     <div class="dropdownAroma" [ngClass]="{'show': isMenuVisibleAromatizadores}">
-      <a href="#opcao1">Opção 1</a>
-      <a href="#opcao2">Opção 2</a>
-      <a href="#opcao3">Opção 3</a>
+      <a href="#opcao1">AROMATIZADOR AMBIENTE</a>
+      <a href="#opcao2">AROMATIZADOR PALITO</a>
+      <a href="#opcao3">AROMATIZADOR REFIL</a>
     </div>
   </div>
-  <div class="divPai">
-    <a class="menuDecoracoes" (click)="toggleMenuDecoracoes($event)">LINHA DECORAÇÔES</a>
+
+  <div class="divPai"
+       (mouseover)="showMenuDecoracoes()"
+       (mouseout)="hideMenuDecoracoes()">
+    <a class="menuDecoracoes">LINHA DECORAÇÕES</a>
     <div class="dropdownDeco" [ngClass]="{'show': isMenuVisibleDecoracoes}">
-      <a href="#opcao1">Opção 1</a>
-      <a href="#opcao2">Opção 2</a>
-      <a href="#opcao3">Opção 3</a>
+      <a href="#opcao1">DECORAÇÕES ARTESANATOS</a>
+      <a href="#opcao2">DECORAÇÕES NATAL</a>
+      <a href="#opcao3">DECORAÇÕES REFIL</a>
     </div>
   </div>
+
   <div class="divPai">
     <a routerLink="" fragment="sobre">SOBRE</a>
   </div>
@@ -74,7 +83,7 @@
   <section id="fragrancias">
     <div class="linha-com-texto">
       <div>
-        <h1>Linha de Fragrâncias</h1>
+        <h1>Linha de Aromatizadores</h1>
         <p>Ver toda linha -></p>
       </div>
     </div>
