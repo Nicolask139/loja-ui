@@ -1,7 +1,7 @@
 import { MessageService } from 'primeng/api';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../enviroments/enviroment';
+import { environment } from '../../../enviroments/enviroment';
 import { Endereco } from './conta';
 import { Router } from '@angular/router';
 

@@ -6,8 +6,8 @@ import { ActivatedRoute } from '@angular/router';
 import { HeaderComponent } from "../header/header.component";
 import { FooterComponent } from "../footer/footer.component";
 import { Router } from '@angular/router';
-import { DestaqueComponent } from '../destaque/destaque.component';
-import { PesquisaComponent } from "../pesquisa/pesquisa.component"; 
+import { DestaqueComponent } from './destaque/destaque.component';
+import { PesquisaComponent } from "./pesquisa/pesquisa.component"; 
 import { FormsModule } from '@angular/forms';
 
 @Component({

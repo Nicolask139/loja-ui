@@ -1,0 +1,44 @@
+<app-header></app-header>
+<div class="comprar">
+
+    <div class="img"></div>
+    <div class="info">
+
+        <p-floatLabel>
+            <input
+              pInputText
+              placeholder="Digite o nome do produto!!"
+              id="nome"
+              name="nome"
+              required
+            />
+            <label htmlFor="estado">Digite o nome do produto!!</label>
+          </p-floatLabel>
+        <br>
+        <p>Descrição:</p>
+        <br>
+        <p-floatLabel>
+            <textarea 
+                id="float-input" 
+                rows="5"
+                cols="30" 
+                pInputTextarea>
+            </textarea>
+        </p-floatLabel>
+        <br><br><br>
+        <p-floatLabel>
+            <input
+              id="valor"
+              name="valor"
+              required
+            >
+            <label>VALOR</label>
+          </p-floatLabel>
+        <br><br>
+        <div class="divBotao">
+            <button class="full-width-button">Adicionar ao Carrinho</button>
+        </div>
+    </div>
+
+</div>
+<app-footer></app-footer>

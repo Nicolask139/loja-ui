@@ -81,7 +81,7 @@
 .dropdownVelas a:hover::after,
 .dropdownAroma a:hover::after,
 .dropdownDeco a:hover::after {
-  width: 100%; /* Expande a linha até a largura total do link */
+  width: 100%; 
 }
 
 a::after {
@@ -137,8 +137,13 @@ a:hover::after {
   padding: 20px;
 }
 
+.container h1{
+  font-size: 30px;
+}
+
 .carrosel {
-  background-color: black;
+  font-family: "Cormorant Garamond", serif;
+  background-color: transparent;
   display: flex; 
   flex-direction: column; 
   border: 1px solid #333;
@@ -151,11 +156,12 @@ a:hover::after {
 }
 
 .divComprar h1{
-  color: white;
+  color: black;
 }
 
 .divComprar p{
   color: #ffb222;
+  font-size: 20px;
 }
 
 .divImagem {
@@ -184,19 +190,33 @@ a:hover::after {
 }
 
 .full-width-button {
+  position: relative; /* Necessário para o pseudo-elemento */
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
   font-family: "Cormorant Garamond", serif;
   height: 100%;
   width: 100%; 
-  background-color: #000;
-  color: #fff; 
+  background-color: transparent;
+  color: black; 
   border: none; 
   border-radius: 0; 
   font-size: 25px; 
-  cursor: pointer; 
 }
 
-.full-width-button:hover {
-  background-color: #333; 
+.full-width-button::after {
+  content: ""; 
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px; 
+  background-color: black; 
+  transition: width 0.3s ease; 
+}
+
+.full-width-button:hover::after {
+  width: 100%; 
 }
 
 #myBtn {

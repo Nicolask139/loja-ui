@@ -3,8 +3,8 @@ import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from "../header/header.component";
 import { FooterComponent } from "../footer/footer.component";
-import { CadastrarComponent } from '../cadastrar/cadastrar.component';
-import { LoginComponent } from '../login/login.component';
+import { CadastrarComponent } from '../conta-l/cadastrar/cadastrar.component';
+import { LoginComponent } from '../conta-l/login/login.component';
 import { ToastModule } from 'primeng/toast';
 
 
@@ -18,7 +18,9 @@ import { ToastModule } from 'primeng/toast';
     FooterComponent,
     CadastrarComponent,
     LoginComponent,
-    ToastModule
+    ToastModule,
+    CadastrarComponent,
+    LoginComponent
 ],
   templateUrl: './conta-u.component.html',
   styleUrls: ['./conta-u.component.css']

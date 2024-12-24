@@ -1,0 +1,125 @@
+
+  .comprar{
+    padding: 50px;
+    display: flex;
+  }
+  
+  .img{
+    height: 700px;
+    width: 40%;
+    background-color: rgb(133, 133, 133);
+    padding-top: 30px;
+    border-radius: 10px;
+  }
+  
+  .info{
+    font-family: "Cormorant Garamond", serif;
+    height: 700px;
+    width: 60%;
+    background-color: black;
+    padding: 30px;
+    border-radius: 10px;
+  }
+  
+  .info h1{
+    color: #ffb222;
+  }
+  
+  .info .valor{
+    color: #ffb222;
+  }
+  
+  .info p{
+    color: #ffffff;
+    font-size: 20px;
+  }
+  
+  .informacao{
+    font-family: "Cormorant Garamond", serif;
+    justify-content: space-around;
+    padding: 30px;
+    display: flex;
+  }
+  
+  .desc{
+    height: 400px;
+    width: 49%;
+    background-color: #000;
+    border-radius: 10px;
+  }
+  
+  .desc h1{
+    color: #ffffff;
+    font-size: 50px;
+    padding-left: 50px;
+  }
+  
+  .desc p{
+    color: #ffffff;
+    font-size: 20px;
+    padding: 50px;
+  }
+  
+  .dimensao{
+    height: 400px;
+    width: 49%;
+    background-color: #000;
+    border-radius: 10px;
+  }
+  
+  .dimensao h1{
+    color: #ffffff;
+    font-size: 50px;
+    padding-left: 50px;
+  }
+  
+  .dimensao p{
+    color: #ffffff;
+    font-size: 20px;
+    padding: 15px;
+  }
+  
+  
+  .footer{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center; 
+    background-color: #000;
+    height: 1000px;
+  }
+  
+  .circulo{
+    height: 400px;
+    width: 400px;
+    background-color: white;
+    border-radius: 100%;
+  }
+  
+  .sobre{
+    height: 400px;
+    width: 900px;
+    font-size: 25px;
+    padding-left: 70px;
+  }
+  
+  .divBotao{
+    padding-top: 80px;
+  }
+  
+  .full-width-button {
+    height: 60px;
+    width: 200px;
+    font-family: "Cormorant Garamond", serif;
+    background-color: white;
+    color: #000; 
+    border: none; 
+    border-radius: 5px; 
+    font-size: 25px; 
+    cursor: pointer; 
+  }
+  
+  .full-width-button:hover {
+    background-color: #333; 
+  }
+  

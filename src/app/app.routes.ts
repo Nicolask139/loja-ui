@@ -14,7 +14,7 @@ export const routes: Routes = [
       {
         path: 'pesquisa', 
         loadComponent: () =>
-          import('./pesquisa/pesquisa.component').then((m) => m.PesquisaComponent),
+          import('./loja/pesquisa/pesquisa.component').then((m) => m.PesquisaComponent),
       },
       {
         path: 'carrinho', 
@@ -24,12 +24,17 @@ export const routes: Routes = [
       {
         path: 'produto', 
         loadComponent: () =>
-          import('./produto/produto.component').then((m) => m.ProdutoComponent),
+          import('./loja/produto/produto.component').then((m) => m.ProdutoComponent),
       },
       {
         path: 'destaque', 
         loadComponent: () =>
-          import('./destaque/destaque.component').then((m) => m.DestaqueComponent),
+          import('./loja/destaque/destaque.component').then((m) => m.DestaqueComponent),
+      },
+      {
+        path: 'vendedor', 
+        loadComponent: () =>
+          import('./vendedor/vendedor.component').then((m) => m.VendedorComponent),
       },
       {
         path: '*', 
