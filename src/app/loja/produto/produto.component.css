@@ -73,10 +73,17 @@ input[type="text"]:focus {
 
 .info h1{
   color: #ffb222;
+  font-size: 40px;
 }
+
+.info h2{
+  color: #ffb222;
+}
+
 
 .info .valor{
   color: #ffb222;
+  font-size: 40px;
 }
 
 .info p{
@@ -90,45 +97,6 @@ input[type="text"]:focus {
   padding: 30px;
   display: flex;
 }
-
-.desc{
-  height: 400px;
-  width: 49%;
-  background-color: #000;
-  border-radius: 10px;
-}
-
-.desc h1{
-  color: #ffffff;
-  font-size: 50px;
-  padding-left: 50px;
-}
-
-.desc p{
-  color: #ffffff;
-  font-size: 20px;
-  padding: 50px;
-}
-
-.dimensao{
-  height: 400px;
-  width: 49%;
-  background-color: #000;
-  border-radius: 10px;
-}
-
-.dimensao h1{
-  color: #ffffff;
-  font-size: 50px;
-  padding-left: 50px;
-}
-
-.dimensao p{
-  color: #ffffff;
-  font-size: 20px;
-  padding: 15px;
-}
-
 
 .footer{
   display: flex;
@@ -154,7 +122,7 @@ input[type="text"]:focus {
 }
 
 .divBotao{
-  padding-top: 80px;
+  padding-top: 20px;
 }
 
 .full-width-button {

@@ -29,7 +29,7 @@ export class LoginService {
           detail: 'Login realizado com sucesso.',
         });
         setTimeout(() => {
-          this.router.navigate(['']);
+          this.router.navigate(["vendedor"]);
         }, 2000);
       },
       error: (error) => {   

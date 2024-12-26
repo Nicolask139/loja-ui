@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
       {
-        path: 'contau', 
+        path: 'login', 
         loadComponent: () =>
           import('./conta-l/conta-u.component').then((m) => m.ContaUComponent),
       },

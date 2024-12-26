@@ -1,32 +1,12 @@
 <app-header></app-header>
-<div class="tabview">
-    <div class="tabs">
-      <button 
-        class="tab" 
-        [class.active]="activeTab === 1" 
-        (click)="changeTab(1)">
-        Login
-      </button>
-      <button 
-        class="tab" 
-        [class.active]="activeTab === 2" 
-        (click)="changeTab(2)">
-        Criar conta
-      </button>
-</div>
   
-<div class="tab-content">
-    <div *ngIf="activeTab === 1" class="content-login">
+
+    <div >
 
         <app-login></app-login>
 
     </div>
-    <div *ngIf="activeTab === 2" class="content-cadastro">
-        
-        <app-cadastrar></app-cadastrar>
 
-    </div>
-</div>
-</div>
+
 <app-footer></app-footer>
 <router-outlet></router-outlet>

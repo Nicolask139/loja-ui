@@ -28,15 +28,30 @@
         <br><br><br>
         <p-floatLabel>
             <input
+            pInputText
               id="valor"
               name="valor"
               required
             >
             <label>VALOR</label>
-          </p-floatLabel>
+        </p-floatLabel>
         <br><br>
+
+        <p-floatLabel>
+          <p-cascadeSelect
+              inputId="cs-city"
+              [(ngModel)]="selectedCity"
+              [options]="categoria"
+              optionLabel="cname"
+              optionGroupLabel="name"
+              [optionGroupChildren]="['states', 'cities']"
+              [style]="{ minWidth: '14rem' }"
+              placeholder="Selecione a categoria" />
+          <label for="cs-city">Categoria</label>
+      </p-floatLabel>
+
         <div class="divBotao">
-            <button class="full-width-button">Adicionar ao Carrinho</button>
+            <button class="full-width-button">Realizar Pedido</button>
         </div>
     </div>
 
