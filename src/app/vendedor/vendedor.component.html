@@ -1,12 +1,32 @@
 <app-header></app-header>
 <div class="comprar">
 
-    <div class="img"></div>
+    <div class="img">
+      <div class="card flex justify-content-center">
+        <p-toast />
+        <p-fileUpload 
+            name="demo[]" 
+            url="https://www.primefaces.org/cdn/api/upload.php" 
+            (onUpload)="onUpload($event)" 
+            [multiple]="true" 
+            accept="image/*" 
+            maxFileSize="1000000">
+                <ng-template pTemplate="content">
+                    <ul *ngIf="uploadedFiles.length">
+                        <li *ngFor="let file of uploadedFiles">
+                            {{ file.name }} - {{ file.size }} bytes
+                        </li>
+                    </ul>
+                </ng-template>
+        </p-fileUpload>
+    </div>
+    </div>
     <div class="info">
 
         <p-floatLabel>
             <input
               pInputText
+              [(ngModel)]="produto.nome"
               placeholder="Digite o nome do produto!!"
               id="nome"
               name="nome"
@@ -19,6 +39,7 @@
         <br>
         <p-floatLabel>
             <textarea 
+                [(ngModel)]="produto.descricao"
                 id="float-input" 
                 rows="5"
                 cols="30" 
@@ -28,7 +49,8 @@
         <br><br><br>
         <p-floatLabel>
             <input
-            pInputText
+              pInputText
+              [(ngModel)]="produto.preco"
               id="valor"
               name="valor"
               required
@@ -40,20 +62,26 @@
         <p-floatLabel>
           <p-cascadeSelect
               inputId="cs-city"
-              [(ngModel)]="selectedCity"
+              [(ngModel)]="produto.marca"
               [options]="categoria"
               optionLabel="cname"
               optionGroupLabel="name"
-              [optionGroupChildren]="['states', 'cities']"
+              [optionGroupChildren]="['categoria', 'marcas']"
               [style]="{ minWidth: '14rem' }"
               placeholder="Selecione a categoria" />
           <label for="cs-city">Categoria</label>
       </p-floatLabel>
-
+      
+    
         <div class="divBotao">
-            <button class="full-width-button">Salvar produto</button>
+            <form (ngSubmit)="criarProduto()">
+                <button class="full-width-button">Salvar produto</button>
+            </form>
         </div>
+
+        
     </div>
 
 </div>
 <app-footer></app-footer>
+<router-outlet></router-outlet>

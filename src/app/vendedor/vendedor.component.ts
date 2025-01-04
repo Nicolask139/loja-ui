@@ -7,11 +7,27 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { FormsModule } from '@angular/forms';
 import { InputMaskModule } from 'primeng/inputmask';
 import { CascadeSelectModule } from 'primeng/cascadeselect';
+import { RouterOutlet, Router } from '@angular/router';
+import { Produto } from './produto';
+import { FileUploadEvent, FileUploadModule } from 'primeng/fileupload';
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
+import { ButtonModule } from 'primeng/button';
+import { CommonModule } from '@angular/common';
+import { VendedorService } from './vendedor.service';
+
+interface UploadEvent {
+  originalEvent: Event;
+  files: File[];
+}
 
 @Component({
   selector: 'app-vendedor',
   standalone: true,
   imports: [
+    FileUploadModule,
+    ButtonModule,
+    RouterOutlet,
     HeaderComponent,
     InputTextModule,
     FloatLabelModule,
@@ -20,43 +36,89 @@ import { CascadeSelectModule } from 'primeng/cascadeselect';
     InputMaskModule,
     FooterComponent,
     CascadeSelectModule,
+    ToastModule,
+    CommonModule
   ],
   templateUrl: './vendedor.component.html',
   styleUrl: './vendedor.component.css',
 })
+
 export class VendedorComponent implements OnInit {
+  uploadedFiles: any[] = [];
+
   value!: string;
   categoria: any[] | undefined;
-  selectedCity: any;
+
+  produto: Produto = {
+    preco: 0,
+    descricao: "", 
+    imagem_url: "", 
+    marca: "",
+    nome: ""
+  }
+
+  constructor(
+    private router: Router,
+    private messageService: MessageService,
+    private vendedorService: VendedorService
+  ){}
+
+  criarProduto(){
+    console.log(this.uploadedFiles)
+    this.vendedorService.criarProduto(this.produto);
+  }
+
+  onUpload(event: FileUploadEvent) {
+    for (let file of event.files) {
+        this.convertToBase64(file).then((base64: string) => {
+            this.produto.imagem_url = base64;
+            this.uploadedFiles.push({ file, base64 });
+        }).catch(err => {
+            console.error("Erro ao converter arquivo em Base64:", err);
+        });
+    }
+
+    this.messageService.add({ severity: 'info', summary: 'File Uploaded', detail: '' });
+}
+
+
+  convertToBase64(file: File): Promise<string> {
+      return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.readAsDataURL(file);
+          reader.onload = () => resolve(reader.result as string); // Retorna o Base64
+          reader.onerror = error => reject(error); // Trata erros
+      });
+  }
 
   ngOnInit(): void {
     this.categoria = [
       {
         name: 'Sisal de cetim',
         code: 'Sisal de cetim',
-        states: [
+        categoria: [
           {
             name: 'Velas',
-            cities: [
-              { cname: 'Velas Perfumadas', code: 'Perfumadas' },
-              { cname: 'Velas Decoradas', code: 'Decoradas' },
-              { cname: 'Velas Luminarias', code: 'Luminarias' },
+            marcas: [
+              { cname: 'Velas Perfumadas'},
+              { cname: 'Velas Decoradas'},
+              { cname: 'Velas Luminarias'},
             ],
           },
           {
             name: 'Aromatizantes',
-            cities: [
-              { cname: 'Aromatizantes Ambiente', code: 'Ambiente' },
-              { cname: 'Aromatizantes Palito', code: 'Palito' },
-              { cname: 'Aromatizantes Refil', code: 'Refil' },
+            marcas: [
+              { cname: 'Aromatizantes Ambiente'},
+              { cname: 'Aromatizantes Palito'},
+              { cname: 'Aromatizantes Refil'},
             ],
           },
           {
             name: 'Decorações',
-            cities: [
-              { cname: 'Decorações Artesanatos', code: 'Artesanatos' },
-              { cname: 'Decorações Natal', code: 'Natal' },
-              { cname: 'Decorações Refil', code: 'Refil' },
+            marcas: [
+              { cname: 'Decorações Artesanatos'},
+              { cname: 'Decorações Natal'},
+              { cname: 'Decorações Refil'},
             ],
           },
         ],

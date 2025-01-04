@@ -7,6 +7,11 @@ export const routes: Routes = [
           import('./conta-l/conta-u.component').then((m) => m.ContaUComponent),
       },
       {
+        path: 'cadastrar', 
+        loadComponent: () =>
+          import('./conta-l/cadastrar/cadastrar.component').then((m) => m.CadastrarComponent),
+      },
+      {
         path: '', 
         loadComponent: () =>
           import('./loja/loja.component').then((m) => m.LojaComponent),
