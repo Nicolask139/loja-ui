@@ -47,7 +47,8 @@ export class VendedorComponent implements OnInit {
   uploadedFiles: any[] = [];
 
   value!: string;
-  categoria: any[] | undefined;
+  categoria: any | undefined;
+  marcas: any;
 
   produto: Produto = {
     preco: 0,
@@ -64,7 +65,7 @@ export class VendedorComponent implements OnInit {
   ){}
 
   criarProduto(){
-    console.log(this.uploadedFiles)
+    this.produto.marca = this.marcas.cname;
     this.vendedorService.criarProduto(this.produto);
   }
 
@@ -95,7 +96,6 @@ export class VendedorComponent implements OnInit {
     this.categoria = [
       {
         name: 'Sisal de cetim',
-        code: 'Sisal de cetim',
         categoria: [
           {
             name: 'Velas',
