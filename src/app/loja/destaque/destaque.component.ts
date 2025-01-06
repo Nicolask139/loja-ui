@@ -22,8 +22,10 @@ export class DestaqueComponent implements OnInit{
 
   activeRoute : ActivatedRoute = inject(ActivatedRoute);
   velas: any;
+  velasLuminarias: any;
+  velasDecoradas: any;
+  velasPerfumadas: any;
   fragrancias: any;
-  artesanatos: any;
   decoracoes: any;
   showBackToTop = false;
   isMenuVisibleVelas = false;
@@ -130,9 +132,9 @@ export class DestaqueComponent implements OnInit{
     },
   });
 
-  this.DestaqueService.getDadosFragrancias().subscribe({
+  this.DestaqueService.getDadosVDecoradas().subscribe({
     next: (response) => {
-      this.fragrancias = response; 
+      this.velasDecoradas = response; 
       
     },
     error: (err) => {
@@ -140,9 +142,29 @@ export class DestaqueComponent implements OnInit{
     },
   });
 
-  this.DestaqueService.getDadosArtesanatos().subscribe({
+  this.DestaqueService.getDadosVLuminarias().subscribe({
     next: (response) => {
-      this.artesanatos = response; 
+      this.velasLuminarias = response; 
+      
+    },
+    error: (err) => {
+      console.error('Erro ao obter os dados:', err); 
+    },
+  });
+
+  this.DestaqueService.getDadosVPerfumadas().subscribe({
+    next: (response) => {
+      this.velasPerfumadas = response; 
+      
+    },
+    error: (err) => {
+      console.error('Erro ao obter os dados:', err); 
+    },
+  });
+
+  this.DestaqueService.getDadosFragrancias().subscribe({
+    next: (response) => {
+      this.fragrancias = response; 
       
     },
     error: (err) => {

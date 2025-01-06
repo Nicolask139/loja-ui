@@ -67,6 +67,10 @@ export class VendedorComponent implements OnInit {
   criarProduto(){
     this.produto.marca = this.marcas.cname;
     this.vendedorService.criarProduto(this.produto);
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
+    
   }
 
   onUpload(event: FileUploadEvent) {
@@ -108,17 +112,15 @@ export class VendedorComponent implements OnInit {
           {
             name: 'Aromatizantes',
             marcas: [
-              { cname: 'Aromatizantes Ambiente'},
-              { cname: 'Aromatizantes Palito'},
-              { cname: 'Aromatizantes Refil'},
+              { cname: 'Difusor Ambiente'},
+              { cname: 'Home Spray'},
+              { cname: 'Agua de lencol'},
             ],
           },
           {
             name: 'Decorações',
             marcas: [
-              { cname: 'Decorações Artesanatos'},
-              { cname: 'Decorações Natal'},
-              { cname: 'Decorações Refil'},
+              { cname: 'Decoracoes'},
             ],
           },
         ],

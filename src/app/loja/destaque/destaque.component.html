@@ -8,9 +8,9 @@
        (mouseout)="hideMenuVelas()">
     <a class="menuVelas">LINHA VELAS</a>
     <div class="dropdownVelas" [ngClass]="{'show': isMenuVisibleVelas}">
-      <a href="#opcao1">VELAS PERFUMADAS</a>
-      <a href="#opcao2">VELAS DECORAÇÔES</a>
-      <a href="#opcao3">VELAS LUMINARIAS</a>
+      <a routerLink="" fragment="aromaticas">VELAS AROMÁTICAS</a>
+      <a routerLink="" fragment="decoradas">VELAS DECORADAS</a>
+      <a routerLink="" fragment="perfumadas">VELAS PERFUMADAS</a>
     </div>
   </div>
 
@@ -19,21 +19,14 @@
        (mouseout)="hideMenuAromatizadores()">
     <a class="menuAromatizadores">LINHA AROMATIZADORES</a>
     <div class="dropdownAroma" [ngClass]="{'show': isMenuVisibleAromatizadores}">
-      <a href="#opcao1">AROMATIZADOR AMBIENTE</a>
-      <a href="#opcao2">AROMATIZADOR PALITO</a>
-      <a href="#opcao3">AROMATIZADOR REFIL</a>
+      <a routerLink="" fragment="ambiente">DIFUSOR DE AMBIENTE</a>
+      <a routerLink="" fragment="spray">HOME SPRAY</a>
+      <a routerLink="" fragment="lencol">ÁGUA DE LENÇOL</a>
     </div>
   </div>
 
-  <div class="divPai"
-       (mouseover)="showMenuDecoracoes()"
-       (mouseout)="hideMenuDecoracoes()">
-    <a class="menuDecoracoes">LINHA DECORAÇÕES</a>
-    <div class="dropdownDeco" [ngClass]="{'show': isMenuVisibleDecoracoes}">
-      <a href="#opcao1">DECORAÇÕES ARTESANATOS</a>
-      <a href="#opcao2">DECORAÇÕES NATAL</a>
-      <a href="#opcao3">DECORAÇÕES REFIL</a>
-    </div>
+  <div class="divPai">
+    <a routerLink="" fragment="decoracoes">LINHA DECORAÇÕES</a>
   </div>
 
   <div class="divPai">
@@ -55,21 +48,22 @@
     <div class="imagem"></div>
     <br />
   </section>
-  <section id="velas">
+
+  <section id="aromaticas">
     <div class="linha-com-texto">
       <div>
-        <h1>Linha de Velas</h1>
+        <h1>Linha de Velas Aromáticas</h1>
         <p>Ver toda linha -></p>
       </div>
     </div>
     <div class="container">
-      <div class="carrosel" *ngFor="let velas of velas">
+      <div class="carrosel" *ngFor="let perfumadas of velasPerfumadas">
         <div class="divImagem">
-          <img [src]="velas.imagemUrl" alt="a" width="100%" height="100%" />
+          <img [src]="perfumadas.imagemUrl" alt="a" width="400px" height="400px" />
         </div>
         <div class="divComprar">
-          <h1>{{ velas.nome }}</h1>
-          <p>Valor: R${{ velas.preco }}</p>
+          <h1>{{ perfumadas.nome }}</h1>
+          <p>Valor: R${{ perfumadas.preco }}</p>
         </div>
         <div class="divBotao">
           <button class="full-width-button" (click)="navigateToProduto()">
@@ -80,10 +74,63 @@
     </div>
     <br />
   </section>
-  <section id="fragrancias">
+
+  <section id="decoradas">
     <div class="linha-com-texto">
       <div>
-        <h1>Linha de Aromatizadores</h1>
+        <h1>Linha de Velas Decoradas</h1>
+        <p>Ver toda linha -></p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="carrosel" *ngFor="let decoradas of velasDecoradas">
+        <div class="divImagem">
+          <img [src]="decoradas.imagemUrl" alt="a" width="400px" height="400px" />
+        </div>
+        <div class="divComprar">
+          <h1>{{ decoradas.nome }}</h1>
+          <p>Valor: R${{ decoradas.preco }}</p>
+        </div>
+        <div class="divBotao">
+          <button class="full-width-button" (click)="navigateToProduto()">
+            Ver produto
+          </button>
+        </div>
+      </div>
+    </div>
+    <br />
+  </section>
+
+  <section id="perfumadas">
+    <div class="linha-com-texto">
+      <div>
+        <h1>Linha de Velas Perfumadas</h1>
+        <p>Ver toda linha -></p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="carrosel" *ngFor="let perfumadas of velasPerfumadas">
+        <div class="divImagem">
+          <img [src]="perfumadas.imagemUrl" alt="a" width="400px" height="400px" />
+        </div>
+        <div class="divComprar">
+          <h1>{{ perfumadas.nome }}</h1>
+          <p>Valor: R${{ perfumadas.preco }}</p>
+        </div>
+        <div class="divBotao">
+          <button class="full-width-button" (click)="navigateToProduto()">
+            Ver produto
+          </button>
+        </div>
+      </div>
+    </div>
+    <br />
+  </section>
+
+  <section id="ambiente">
+    <div class="linha-com-texto">
+      <div>
+        <h1>Linha de Difusor de Ambiente</h1>
         <p>Ver toda linha -></p>
       </div>
     </div>
@@ -91,11 +138,11 @@
     <div class="container">
       <div class="carrosel"  *ngFor="let fragrancias of fragrancias">
         <div class="divImagem">
-          <img [src]="fragrancias.imagemUrl" alt="a" width="100%" height="100%" />
+          <img [src]="fragrancias.imagemUrl" alt="a" width="400px" height="400px" />
         </div>
         <div class="divComprar">
           <h1>{{ fragrancias.nome }}</h1>
-          <p>Valor: R${{ fragrancias.preco }}</p>
+          <p>Valor: R$ {{ fragrancias.preco }}</p>
         </div>
         <div class="divBotao">
           <button class="full-width-button" (click)="navigateToProduto()">
@@ -104,24 +151,25 @@
         </div>
       </div>
     </div>
-    <br />
+    <br/>
   </section>
-  <section id="artesanatos">
+
+  <section id="spray">
     <div class="linha-com-texto">
       <div>
-        <h1>Linha de Artesanatos</h1>
+        <h1>Linha de Home Spray</h1>
         <p>Ver toda linha -></p>
       </div>
     </div>
     <br />
     <div class="container">
-      <div class="carrosel" *ngFor="let artesanatos of artesanatos">
+      <div class="carrosel"  *ngFor="let fragrancias of fragrancias">
         <div class="divImagem">
-          <img [src]="artesanatos.imagemUrl" alt="a" width="100%" height="100%" />
+          <img [src]="fragrancias.imagemUrl" alt="a" width="400px" height="400px" />
         </div>
         <div class="divComprar">
-          <h1>{{ artesanatos.nome }}</h1>
-          <p>Valor: R${{ artesanatos.preco }}</p>
+          <h1>{{ fragrancias.nome }}</h1>
+          <p>Valor: R$ {{ fragrancias.preco }}</p>
         </div>
         <div class="divBotao">
           <button class="full-width-button" (click)="navigateToProduto()">
@@ -132,6 +180,34 @@
     </div>
     <br />
   </section>
+
+  <section id="lencol">
+    <div class="linha-com-texto">
+      <div>
+        <h1>Linha de Água de lençol</h1>
+        <p>Ver toda linha -></p>
+      </div>
+    </div>
+    <br />
+    <div class="container">
+      <div class="carrosel"  *ngFor="let fragrancias of fragrancias">
+        <div class="divImagem">
+          <img [src]="fragrancias.imagemUrl" alt="a" width="400px" height="400px" />
+        </div>
+        <div class="divComprar">
+          <h1>{{ fragrancias.nome }}</h1>
+          <p>Valor: R$ {{ fragrancias.preco }}</p>
+        </div>
+        <div class="divBotao">
+          <button class="full-width-button" (click)="navigateToProduto()">
+            Ver produto
+          </button>
+        </div>
+      </div>
+    </div>
+    <br />
+  </section>
+  
   <section id="decoracoes">
     <div class="linha-com-texto">
       <div>
@@ -143,11 +219,11 @@
     <div class="container">
       <div class="carrosel" *ngFor="let decoracoes of decoracoes">
         <div class="divImagem">
-          <img [src]="decoracoes.imagemUrl" alt="a" width="100%" height="100%" />
+          <img [src]="decoracoes.imagemUrl" alt="a" width="400px" height="400px" />
         </div>
         <div class="divComprar">
           <h1>{{ decoracoes.nome }}</h1>
-          <p>Valor: R${{ decoracoes.preco }}</p>
+          <p>Valor: R$ {{ decoracoes.preco }}</p>
         </div>
         <div class="divBotao">
           <button class="full-width-button" (click)="navigateToProduto()">

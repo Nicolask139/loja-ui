@@ -11,8 +11,11 @@ export class DestaqueService {
 
   private apiUrlVelas = `${environment.apiBaseUrl}/produtos/allVelas`;
   private apiUrlFragrancias = `${environment.apiBaseUrl}/produtos/allFragrancias`;
-  private apiUrlArtesanatos = `${environment.apiBaseUrl}/produtos/allArtesanatos`;
   private apiUrlDecoracoes = `${environment.apiBaseUrl}/produtos/allDecoracoes`;
+  private apiUrlVDecoradas = `${environment.apiBaseUrl}/produtos/allDecoradas`;
+  private apiUrlVPerfumadas = `${environment.apiBaseUrl}/produtos/allPerfumadas`;
+  private apiUrlVLuminarias = `${environment.apiBaseUrl}/produtos/allLuminarias`;
+
 
   constructor(private http: HttpClient, private messageService: MessageService) {}
 
@@ -22,11 +25,16 @@ export class DestaqueService {
   getDadosFragrancias(): Observable<any>{
     return this.http.get<any>(this.apiUrlFragrancias);
   }
-  getDadosArtesanatos(): Observable<any>{
-    return this.http.get<any>(this.apiUrlArtesanatos);
-  }
   getDadosDecoracoes(): Observable<any>{
     return this.http.get<any>(this.apiUrlDecoracoes);
   }
-
+  getDadosVDecoradas(): Observable<any>{
+    return this.http.get<any>(this.apiUrlVDecoradas);
+  }
+  getDadosVLuminarias(): Observable<any>{
+    return this.http.get<any>(this.apiUrlVPerfumadas);
+  } 
+  getDadosVPerfumadas(): Observable<any>{
+    return this.http.get<any>(this.apiUrlVLuminarias);
+  }
 }
