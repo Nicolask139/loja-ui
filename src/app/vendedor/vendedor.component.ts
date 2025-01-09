@@ -104,9 +104,9 @@ export class VendedorComponent implements OnInit {
           {
             name: 'Velas',
             marcas: [
-              { cname: 'Velas Perfumadas'},
+              { cname: 'Pastilhas Aromaticas'},
               { cname: 'Velas Decoradas'},
-              { cname: 'Velas Luminarias'},
+              { cname: 'Velas Perfumadas'},
             ],
           },
           {

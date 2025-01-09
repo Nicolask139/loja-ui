@@ -1,54 +1,30 @@
-<header>
-    <div class="headerDiv">
-        <div class="left">
-            <img src="Logo.png" alt="aaain" width="250" height="150">
+<div class="pai">
+    <div class="lista">
+
+        <div 
+        *ngIf="isLoading">Carregando...
         </div>
-        <div class="center">
-            <span class="p-input-icon-left">
-            <i class="pi pi-search"></i>
-            <input pInputText placeholder="Buscar produtos" />   </span>
+        
+        <div *ngIf="!(isLoading || (produtos$ | async)?.length)">
+            <p>Nenhum produto encontrado.</p>
         </div>
-        <div class="right">
-            <p-menu #menu [model]="items" [popup]="true" />
-            <p-button (onClick)="menu.toggle($event)" icon="pi pi-ellipsis-v" size="large"/>
-            <p-button class="botao" icon="pi pi-shopping-cart" size="large" />
+
+        <div *ngFor="let produto of (produtos$ | async)">
+            <div class="produto">
+
+              <div class="img">
+                <img [src]="produto.imagemUrl" alt="{{ produto.nome }}" width="190px" height="190px"/>
+              </div>
+
+              <div class="info">
+                <h1>{{ produto.nome }}</h1>
+                <h2>R$ {{ produto.preco }}</h2>
+              </div>
+
+            </div>
         </div>
+
     </div>
 
-</header>
-
-
-<div class="card">
-    <p-dataView #dv [value]="produtos" [rows]="10" [paginator]="true">
-        <ng-template pTemplate="list" let-products>
-            <div class="grid grid-nogutter">
-                <div class="col-12" *ngFor="let item of products; let first = first" class="col-12">
-                    <div class="flex flex-column sm:flex-row sm:align-items-center p-4 gap-3" [ngClass]="{ 'border-top-1 surface-border': !first }">
-                        <div class="md:w-10rem relative">
-                            <img class="block xl:block mx-auto border-round w-full" [src]= "item.imagemUrl" [alt]="item.imagemUrl" />
-                        
-                        </div>
-                        <div class="flex flex-column md:flex-row justify-content-between md:align-items-center flex-1 gap-4">
-                            <div class="flex flex-row md:flex-column justify-content-between align-items-start gap-2">
-                                <div>
-                                    <span class="font-medium text-secondary text-sm">{{ item.categoria }}</span>
-                                    <div class="text-lg font-medium text-900 mt-2">{{ item.nome }}</div>
-                                </div>
-                    
-                            </div>
-                            <div class="flex flex-column md:align-items-end gap-5">
-                                <span class="text-xl font-semibold text-900">{{ 'R$' + item.preco }}</span>
-                                <div class="flex flex-row-reverse md:flex-row gap-2">
-                                    <p-button icon="pi pi-heart" [outlined]="true" />
-                                    <p-button icon="pi pi-shopping-cart" class="flex-auto md:flex-initial white-space-nowrap" label="Comprar!" [disabled]="item.estoque === 'OUTOFSTOCK'" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </ng-template>
-    </p-dataView>
 </div>
-
 <router-outlet></router-outlet>

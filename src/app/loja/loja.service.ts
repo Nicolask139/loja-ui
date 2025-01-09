@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { MessageService } from 'primeng/api';
 import { Observable } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +15,9 @@ export class LojaService {
   private apiUrlArtesanatos = `${environment.apiBaseUrl}/produtos/allArtesanatos`;
   private apiUrlDecoracoes = `${environment.apiBaseUrl}/produtos/allDecoracoes`;
 
-  constructor(private http: HttpClient, private messageService: MessageService) {}
+  constructor(
+    private http: HttpClient, 
+    private messageService: MessageService) {}
 
   getDadosVelas(): Observable<any>{
     return this.http.get<any>(this.apiUrlVelas);

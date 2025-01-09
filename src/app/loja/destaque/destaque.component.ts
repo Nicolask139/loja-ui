@@ -21,12 +21,19 @@ import { CommonModule } from '@angular/common';
 export class DestaqueComponent implements OnInit{
 
   activeRoute : ActivatedRoute = inject(ActivatedRoute);
+
   velas: any;
-  velasLuminarias: any;
+  velasPastilhas: any;
   velasDecoradas: any;
   velasPerfumadas: any;
+
   fragrancias: any;
+  agua: any;
+  homeSpray: any;
+  ambiente: any;
+
   decoracoes: any;
+
   showBackToTop = false;
   isMenuVisibleVelas = false;
   isMenuVisibleDecoracoes = false;
@@ -36,11 +43,128 @@ export class DestaqueComponent implements OnInit{
   decoracoesTimeout: any; 
   hideTimeout: any; 
 
-
   constructor(
     private DestaqueService: DestaqueService,
     private router: Router
   ){}
+
+  ngOnInit(): void {
+
+  this.DestaqueService.getDadosVelas().subscribe({
+    next: (response) => {
+      this.velas = response; 
+      
+    },
+    error: (err) => {
+      console.error('Erro ao obter os dados:', err); 
+    },
+  });
+  this.DestaqueService.getDadosVDecoradas().subscribe({
+    next: (response) => {
+      this.velasDecoradas = response; 
+      
+    },
+    error: (err) => {
+      console.error('Erro ao obter os dados:', err); 
+    },
+  });
+  this.DestaqueService.getDadosPastilhas().subscribe({
+    next: (response) => {
+      this.velasPastilhas = response; 
+      
+    },
+    error: (err) => {
+      console.error('Erro ao obter os dados:', err); 
+    },
+  });
+  this.DestaqueService.getDadosVPerfumadas().subscribe({
+    next: (response) => {
+      this.velasPerfumadas = response; 
+      
+    },
+    error: (err) => {
+      console.error('Erro ao obter os dados:', err); 
+    },
+  });
+ 
+
+  this.DestaqueService.getDadosFragrancias().subscribe({
+    next: (response) => {
+      this.fragrancias = response; 
+      
+    },
+    error: (err) => {
+      console.error('Erro ao obter os dados:', err); 
+    },
+  });
+  this.DestaqueService.getDadosAmbiente().subscribe({
+    next: (response) => {
+      this.ambiente = response; 
+      
+    },
+    error: (err) => {
+      console.error('Erro ao obter os dados:', err); 
+    },
+  });
+  this.DestaqueService.getDadosHomeSpray().subscribe({
+    next: (response) => {
+      this.homeSpray = response; 
+      
+    },
+    error: (err) => {
+      console.error('Erro ao obter os dados:', err); 
+    },
+  });
+  this.DestaqueService.getDadosAgua().subscribe({
+    next: (response) => {
+      this.agua = response; 
+      
+    },
+    error: (err) => {
+      console.error('Erro ao obter os dados:', err); 
+    },
+  });
+
+
+  this.DestaqueService.getDadosDecoracoes().subscribe({
+    next: (response) => {
+      this.decoracoes = response; 
+      
+    },
+    error: (err) => {
+      console.error('Erro ao obter os dados:', err); 
+    },
+  });
+
+    this.activeRoute.fragment.subscribe((data: string | null) => {
+    this.JumpToSection(data);
+    });
+  }
+
+  JumpToSection(section: string | null): void {
+    if (section) {
+      const element = document.getElementById(section);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll(): void {
+    const scrollPosition = window.scrollY || document.documentElement.scrollTop || 0;
+    this.showBackToTop = scrollPosition > 100; 
+  }
+  
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  navigateToProduto(){
+    this.router.navigate(['/produto']).then(() => {
+      window.scrollTo(0,0);
+    });
+  }
 
   toggleMenuVelas(event: MouseEvent): void {
     event.preventDefault(); 
@@ -118,97 +242,5 @@ export class DestaqueComponent implements OnInit{
     this.decoracoesTimeout = setTimeout(() => {
       this.isMenuVisibleDecoracoes = false;
     }, 300);
-  }
-
-  ngOnInit(): void {
-
-  this.DestaqueService.getDadosVelas().subscribe({
-    next: (response) => {
-      this.velas = response; 
-      
-    },
-    error: (err) => {
-      console.error('Erro ao obter os dados:', err); 
-    },
-  });
-
-  this.DestaqueService.getDadosVDecoradas().subscribe({
-    next: (response) => {
-      this.velasDecoradas = response; 
-      
-    },
-    error: (err) => {
-      console.error('Erro ao obter os dados:', err); 
-    },
-  });
-
-  this.DestaqueService.getDadosVLuminarias().subscribe({
-    next: (response) => {
-      this.velasLuminarias = response; 
-      
-    },
-    error: (err) => {
-      console.error('Erro ao obter os dados:', err); 
-    },
-  });
-
-  this.DestaqueService.getDadosVPerfumadas().subscribe({
-    next: (response) => {
-      this.velasPerfumadas = response; 
-      
-    },
-    error: (err) => {
-      console.error('Erro ao obter os dados:', err); 
-    },
-  });
-
-  this.DestaqueService.getDadosFragrancias().subscribe({
-    next: (response) => {
-      this.fragrancias = response; 
-      
-    },
-    error: (err) => {
-      console.error('Erro ao obter os dados:', err); 
-    },
-  });
-
-  this.DestaqueService.getDadosDecoracoes().subscribe({
-    next: (response) => {
-      this.decoracoes = response; 
-      
-    },
-    error: (err) => {
-      console.error('Erro ao obter os dados:', err); 
-    },
-  });
-
-    this.activeRoute.fragment.subscribe((data: string | null) => {
-    this.JumpToSection(data);
-    });
-  }
-
-  JumpToSection(section: string | null): void {
-    if (section) {
-      const element = document.getElementById(section);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  }
-
-  @HostListener('window:scroll', [])
-  onWindowScroll(): void {
-    const scrollPosition = window.scrollY || document.documentElement.scrollTop || 0;
-    this.showBackToTop = scrollPosition > 100; 
-  }
-  
-  scrollToTop(): void {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  navigateToProduto(){
-    this.router.navigate(['/produto']).then(() => {
-      window.scrollTo(0,0);
-    });
   }
 }

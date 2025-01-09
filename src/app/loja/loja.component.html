@@ -1,13 +1,23 @@
 <app-header></app-header>
+
+<!-- Input para pesquisa -->
 <div class="opcoes">
-    <input type="text" placeholder="Pesquisar produtos..." [(ngModel)]="inputValue"/>
+  <input
+    type="text"
+    placeholder="Pesquisar produtos..."
+    [(ngModel)]="pesquisa"
+    (ngModelChange)="onInputChange($event)"
+  />
 </div>
 
-<div *ngIf="inputValue === ''; else filledComponent">
-    <app-destaque></app-destaque>
-  </div>
-  <ng-template #filledComponent>
-    <app-pesquisa></app-pesquisa>
-  </ng-template>
+<!-- Mostra 'destaque' se não há pesquisa -->
+<div *ngIf="pesquisa === ''; else filledComponent">
+  <app-destaque></app-destaque>
+</div>
+
+<!-- Mostra os resultados -->
+<ng-template #filledComponent>
+  <app-pesquisa [pesquisa]="pesquisa"></app-pesquisa> <!-- Passa 'pesquisa' como @Input -->
+</ng-template>
 
 <app-footer></app-footer>
