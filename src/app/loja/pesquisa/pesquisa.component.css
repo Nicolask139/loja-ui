@@ -22,6 +22,7 @@
   width: auto;
   height: 200px;
   display: flex;
+  cursor: pointer;
 }
 
 .img{

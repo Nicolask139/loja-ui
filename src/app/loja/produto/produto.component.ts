@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from "../../header/header.component";
 import { FooterComponent } from "../../footer/footer.component";
+import { ProdutoService } from './produto.service';
 
 @Component({
   selector: 'app-produto',
@@ -16,14 +17,26 @@ import { FooterComponent } from "../../footer/footer.component";
   templateUrl: './produto.component.html',
   styleUrl: './produto.component.css'
 })
-export class ProdutoComponent{
+export class ProdutoComponent implements OnInit {
+  produtoId: any  = "";
+  produto: any;
+
   constructor(
-    private router: Router
+    private route: ActivatedRoute,
+    private produtoService: ProdutoService
   ){}
 
-  navigateToCarrinho(){
-    this.router.navigate(['/carrinho']).then(() => {
-      window.scrollTo(0,0);
+  ngOnInit(): void {
+    this.produtoId = this.route.snapshot.paramMap.get('id');
+    console.log('ID do Produto:', this.produtoId);
+    this.produtoService.searchProdutos(this.produtoId).subscribe({
+      next: (response) => {
+        this.produto = response; 
+        
+      },
+      error: (err) => {
+        console.error('Erro ao obter os dados:', err); 
+      },
     });
   }
 }

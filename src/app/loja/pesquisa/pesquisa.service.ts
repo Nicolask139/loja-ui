@@ -5,6 +5,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { MessageService } from 'primeng/api';
 
 export interface PopulaCarrouselProdutoDTO {
+  id: string;
   nome: string;
   preco: number;
   categoria: string;

@@ -27,7 +27,7 @@ export const routes: Routes = [
           import('./carrinho/carrinho.component').then((m) => m.CarrinhoComponent),
       },
       {
-        path: 'produto', 
+        path: 'produto/:id', 
         loadComponent: () =>
           import('./loja/produto/produto.component').then((m) => m.ProdutoComponent),
       },
