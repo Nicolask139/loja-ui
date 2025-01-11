@@ -4,10 +4,17 @@
 }
 
 .img{
+  background-size: cover;
+  object-fit: cover;
   height: 700px;
   width: 40%;
   background-color: rgb(133, 133, 133);
-  padding-top: 30px;
+  border-radius: 10px;
+}
+
+.img img{
+  background-size: cover;
+  object-fit: cover;
   border-radius: 10px;
 }
 

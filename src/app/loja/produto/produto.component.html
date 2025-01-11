@@ -1,11 +1,13 @@
 <app-header></app-header>
 <div class="comprar">
-    <div class="img"></div>
+    <div class="img">
+        <img [src]="produto.imagemUrl" alt="produto.nome" width="650px" height="700px">
+    </div>
     <div class="info">
         <h1>{{produto.nome}}</h1>
         <h2>Descrição:</h2>
         <p>{{produto.descricao}}</p>
-        <h1 class="valor">{{produto.valor}}</h1>
+        <h1 class="valor">Valor: R${{produto.preco}}</h1>
         <div class="divBotao">
             <button class="full-width-button">Converse com a gente!</button>
         </div>
