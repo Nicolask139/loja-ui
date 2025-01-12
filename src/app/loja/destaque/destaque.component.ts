@@ -160,12 +160,13 @@ export class DestaqueComponent implements OnInit{
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  navigateToProduto(){
-    this.router.navigate(['/produto']).then(() => {
+  navigateToProduto(id: string){
+    console.log(id)
+    this.router.navigate(['/produto',id]).then(() => {
       window.scrollTo(0,0);
     });
   }
-
+  
   toggleMenuVelas(event: MouseEvent): void {
     event.preventDefault(); 
     this.isMenuVisibleVelas = !this.isMenuVisibleVelas; 
@@ -198,7 +199,6 @@ export class DestaqueComponent implements OnInit{
       this.isMenuVisibleAromatizadores = false; 
     }
   }
-
   closeMenuDecoracoes(event: MouseEvent): void {
     const target = event.target as HTMLElement;
     const menu = document.querySelector('.dropdownDeco');
@@ -208,36 +208,28 @@ export class DestaqueComponent implements OnInit{
       this.isMenuVisibleDecoracoes = false; 
     }
   }
-
   showMenuVelas(): void {
-    clearTimeout(this.velasTimeout); // Cancela o temporizador de ocultar
-    this.isMenuVisibleVelas = true; // Mostra o menu
+    clearTimeout(this.velasTimeout); 
+    this.isMenuVisibleVelas = true; 
   }
-
   hideMenuVelas(): void {
     this.velasTimeout = setTimeout(() => {
-      this.isMenuVisibleVelas = false; // Oculta o menu após o delay
+      this.isMenuVisibleVelas = false; 
     }, 300);
   }
-
-  // Métodos para Aromatizadores
   showMenuAromatizadores(): void {
     clearTimeout(this.aromatizadoresTimeout);
     this.isMenuVisibleAromatizadores = true;
   }
-
   hideMenuAromatizadores(): void {
     this.aromatizadoresTimeout = setTimeout(() => {
       this.isMenuVisibleAromatizadores = false;
     }, 300);
   }
-
-  // Métodos para Decorações
   showMenuDecoracoes(): void {
     clearTimeout(this.decoracoesTimeout);
     this.isMenuVisibleDecoracoes = true;
   }
-
   hideMenuDecoracoes(): void {
     this.decoracoesTimeout = setTimeout(() => {
       this.isMenuVisibleDecoracoes = false;

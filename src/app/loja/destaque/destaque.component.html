@@ -2,7 +2,6 @@
   <div class="divPai">
     <a routerLink="" fragment="home">HOME</a>
   </div>
-
   <div class="divPai"
        (mouseover)="showMenuVelas()"
        (mouseout)="hideMenuVelas()">
@@ -13,7 +12,6 @@
       <a routerLink="" fragment="perfumadas">VELAS PERFUMADAS</a>
     </div>
   </div>
-
   <div class="divPai"
        (mouseover)="showMenuAromatizadores()"
        (mouseout)="hideMenuAromatizadores()">
@@ -24,16 +22,13 @@
       <a routerLink="" fragment="lencol">ÁGUA DE LENÇOL</a>
     </div>
   </div>
-
   <div class="divPai">
     <a routerLink="" fragment="decoracoes">LINHA DECORAÇÕES</a>
   </div>
-
   <div class="divPai">
     <a routerLink="" fragment="sobre">SOBRE</a>
   </div>
 </div>
-  
   <section id="home">
     <button *ngIf="showBackToTop" (click)="scrollToTop()" id="myBtn">
       <a href="#top" style="color: white"></a><i class="pi pi-arrow-up"></i>
@@ -66,7 +61,7 @@
           <p>Valor: R${{ pastilhas.preco }}</p>
         </div>
         <div class="divBotao">
-          <button class="full-width-button" (click)="navigateToProduto()">
+          <button class="full-width-button" (click)="navigateToProduto(pastilhas.idProduto)">
             Ver produto
           </button>
         </div>
@@ -92,7 +87,7 @@
           <p>Valor: R${{ decoradas.preco }}</p>
         </div>
         <div class="divBotao">
-          <button class="full-width-button" (click)="navigateToProduto()">
+          <button class="full-width-button" (click)="navigateToProduto(decoradas.idProduto)">
             Ver produto
           </button>
         </div>
@@ -118,7 +113,7 @@
           <p>Valor: R${{ perfumadas.preco }}</p>
         </div>
         <div class="divBotao">
-          <button class="full-width-button" (click)="navigateToProduto()">
+          <button class="full-width-button" (click)="navigateToProduto(perfumadas.idProduto)">
             Ver produto
           </button>
         </div>
@@ -145,7 +140,7 @@
           <p>Valor: R$ {{ ambiente.preco }}</p>
         </div>
         <div class="divBotao">
-          <button class="full-width-button" (click)="navigateToProduto()">
+          <button class="full-width-button" (click)="navigateToProduto(ambiente.idProduto)">
             Ver produto
           </button>
         </div>
@@ -172,7 +167,7 @@
           <p>Valor: R$ {{ homeSpray.preco }}</p>
         </div>
         <div class="divBotao">
-          <button class="full-width-button" (click)="navigateToProduto()">
+          <button class="full-width-button" (click)="navigateToProduto(homeSpray.idProduto)">
             Ver produto
           </button>
         </div>
@@ -199,7 +194,7 @@
           <p>Valor: R$ {{ agua.preco }}</p>
         </div>
         <div class="divBotao">
-          <button class="full-width-button" (click)="navigateToProduto()">
+          <button class="full-width-button" (click)="navigateToProduto(agua.idProduto)">
             Ver produto
           </button>
         </div>
@@ -226,7 +221,7 @@
           <p>Valor: R$ {{ decoracoes.preco }}</p>
         </div>
         <div class="divBotao">
-          <button class="full-width-button" (click)="navigateToProduto()">
+          <button class="full-width-button" (click)="navigateToProduto(decoracoes.idProduto)">
             Ver produto
           </button>
         </div>
