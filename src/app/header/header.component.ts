@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Toast, ToastModule } from 'primeng/toast';
 import { environment } from '../../enviroments/enviroment';
 import { HttpClient } from '@angular/common/http';
+import { LojaService } from '../loja/loja.service';
 
 @Component({
   selector: 'app-header',
@@ -14,14 +15,24 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
+
 export class HeaderComponent {
   private apiUrl = `${environment.apiBaseUrl}/usuarios/validate-token`;
+  pesquisa: string= '';
+
   constructor(
     private http: HttpClient, 
     private router: Router,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private LojaService: LojaService
   ){}
+
+  pesquisar(): void {
+    this.LojaService.setaPesquisa(this.pesquisa); 
+  }
+
   navigateToLoja(){
+    this.pesquisar();
     this.router.navigate(['']);
   }
   navigateToConta(){

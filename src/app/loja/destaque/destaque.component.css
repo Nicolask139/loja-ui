@@ -110,6 +110,10 @@ a:hover::after {
   margin: 0;
 }
 
+.linha-com-texto p{
+  cursor: pointer;
+}
+
 .linha-com-texto {
   padding: 50px, 0px, 50px;
   display: flex;

@@ -3,7 +3,6 @@ import { HeaderComponent } from "../header/header.component";
 import { FooterComponent } from "../footer/footer.component";
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { Router } from '@angular/router';
-import { routes } from '../app.routes';
 
 @Component({
   selector: 'app-carrinho',
@@ -12,7 +11,6 @@ import { routes } from '../app.routes';
     HeaderComponent, 
     FooterComponent,
     RouterOutlet,
-    RouterLink,
 ],
   templateUrl: './carrinho.component.html',
   styleUrl: './carrinho.component.css'

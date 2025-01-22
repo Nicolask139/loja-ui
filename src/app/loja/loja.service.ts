@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../enviroments/enviroment';
 import { HttpClient } from '@angular/common/http';
 import { MessageService } from 'primeng/api';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 
 @Injectable({
@@ -14,6 +14,9 @@ export class LojaService {
   private apiUrlFragrancias = `${environment.apiBaseUrl}/produtos/allFragrancias`;
   private apiUrlArtesanatos = `${environment.apiBaseUrl}/produtos/allArtesanatos`;
   private apiUrlDecoracoes = `${environment.apiBaseUrl}/produtos/allDecoracoes`;
+
+  private valorSubject = new BehaviorSubject<string>('');
+  pesquisa$ = this.valorSubject.asObservable();
 
   constructor(
     private http: HttpClient, 
@@ -30,6 +33,9 @@ export class LojaService {
   }
   getDadosDecoracoes(): Observable<any>{
     return this.http.get<any>(this.apiUrlDecoracoes);
+  }
+  setaPesquisa(linha:string){
+    this.valorSubject.next(linha);
   }
 
 }

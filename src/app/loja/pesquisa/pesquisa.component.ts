@@ -25,7 +25,7 @@ import { BehaviorSubject, catchError, debounceTime, distinctUntilChanged, Observ
   styleUrl: './pesquisa.component.css'
 })
 
-export class PesquisaComponent implements OnInit {
+export class PesquisaComponent implements OnChanges {
   [x: string]: any;
   @Input() pesquisa: string = ''; 
 
@@ -36,6 +36,13 @@ export class PesquisaComponent implements OnInit {
     private pesquisaService: PesquisaService,
     private router: Router  
   ) {}
+
+  ngOnChanges(changes: SimpleChanges): void {
+    // Sempre que o valor de pesquisa for alterado (de outro componente ou input)
+    if (changes['pesquisa'] && changes['pesquisa'].currentValue !== changes['pesquisa'].previousValue) {
+      this.pesquisaService.setPesquisa(this.pesquisa);  // Atualiza o serviço com o novo valor de pesquisa
+    }
+  }
 
   ngOnInit(): void {
     this.produtos$ = this.pesquisaService.pesquisa$.pipe(

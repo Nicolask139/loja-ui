@@ -5,6 +5,9 @@ import { FooterComponent } from '../../footer/footer.component';
 import { ActivatedRoute } from '@angular/router';
 import { RouterOutlet, RouterLink, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { PesquisaService } from '../pesquisa/pesquisa.service';
+import { LojaComponent } from '../loja.component';
+import { LojaService } from '../loja.service';
 @Component({
   selector: 'app-destaque',
   standalone: true,
@@ -19,6 +22,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './destaque.component.css'
 })
 export class DestaqueComponent implements OnInit{
+
+  pesquisa: string = '';
 
   activeRoute : ActivatedRoute = inject(ActivatedRoute);
 
@@ -45,6 +50,7 @@ export class DestaqueComponent implements OnInit{
 
   constructor(
     private DestaqueService: DestaqueService,
+    private LojaService: LojaService,
     private router: Router
   ){}
 
@@ -165,6 +171,51 @@ export class DestaqueComponent implements OnInit{
     this.router.navigate(['/produto',id]).then(() => {
       window.scrollTo(0,0);
     });
+  }
+
+  pesquisar(): void {
+    this.LojaService.setaPesquisa(this.pesquisa); 
+  }
+
+  verLinha(linha: number){
+    
+    switch (linha){
+      case 1:
+        this.pesquisa = "Pastilhas Aromáticas"
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        this.pesquisar();
+      break;
+      case 2:
+        this.pesquisa = "Velas Decoradas"
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        this.pesquisar();
+      break;
+      case 3:
+        this.pesquisa = "Velas Perfumadas"
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        this.pesquisar();
+      break;
+      case 4:
+        this.pesquisa = "Difusor de Ambiente"
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        this.pesquisar();
+      break;
+      case 5:
+        this.pesquisa = "Home Spray"
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        this.pesquisar();
+      break;
+      case 6:
+        this.pesquisa = "Água de lençol"
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        this.pesquisar();
+      break;
+      case 7:
+        this.pesquisa = "Decorações"
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        this.pesquisar();
+      break;
+    }
   }
   
   toggleMenuVelas(event: MouseEvent): void {
